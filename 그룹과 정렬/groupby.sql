@@ -51,20 +51,21 @@ group by deptno;
 select deptno,count(*),count(comm)
 from professor
 group by deptno
-HAVING count(profno)>1;
---HAVING count(*)>1;??
+--HAVING count(profno)>1;
+HAVING count(*)>1;
 
 -- 학생 수가 4명이상이고 평균키가 168이상인  학년에 대해서 학년, 학생 수, 평균 키, 평균 몸무게를 출력
 -- 단, 평균 키와 평균 몸무게는 소수점 두 번째 자리에서 반올림 하고, 
 -- 출력순서는 평균 키가 높은 순부터 내림차순으로 출력하고 
 --   그 안에서 평균 몸무게가 높은 순부터 내림차순으로 출력
-
+-- +조건추가1  학년이상
 select grade,count(STUDNO)
             ,round(avg(weight),1) any_weight
             ,round(avg(height),1) any_height
 from student
+where grade>1
 group by grade
-having count(*)>4 and   round(avg(height)) >168
+having count(*)>=2 and   round(avg(height)) >168
 order by any_height desc,any_weight desc;
 
 
