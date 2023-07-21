@@ -74,7 +74,8 @@ WHERE s.deptno = d.deptno;
  SELECT s.studno,s.name, d.deptno,d.dname ,d.loc,d.deptno
 FROM student s
     NATURAL JOIN department d;
---                    ->>
+--                    ->> 공통된 컴럼은 별칭을 쓰면안됨
+    
  
 -- NATURAL조인은 조인 에트리뷰트에 테이블 별명을 사용하면 오류발샤ㅐㅇ
 SELECT studno,name, deptno,dname ,loc,deptno

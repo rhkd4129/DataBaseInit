@@ -140,4 +140,109 @@ where exists(
             
             SELECT position
             from professor
-            where comm is not null)
+            where comm is not null);
+            
+            
+-- 문1)  보직수당을 받는 교수가 한 명이라도 있으면 
+--       모든 교수의 교수 번호, 이름, 보직수당 그리고 급여와 보직수당의 합(NULL처리)을 출력
+
+SELECT profno,name,comm,(sal+nvl(comm,0)) 
+from professor 
+where exists (
+            select profno
+            from professor
+            where comm  iS not null);
+            
+-- 문2) 학생 중에서 ‘goodstudent’이라는 사용자 아이디가 없으면 1을 출력하여라   
+
+--select 1
+--from student
+--where exists (select userid
+--            from student
+--             where userid != 'goodstudent');
+
+select 1 userid_exist
+from dual
+where not EXISTS(select userid
+                from student 
+                where userid='goodstudent');
+
+
+select 1
+from student
+where userid not in ('goodstudent');
+
+-- 다중 컬럼 서브쿼리
+-- 서브쿼리에서 여러 개의 칼럼 값을 검색하여 메인쿼리의 조건절과 비교하는 서브쿼리
+-- 메인쿼리의 조건절에서도 서브쿼리의 칼럼 수만큼 지정
+-- 종류
+-- 1) PAIRWISE : 칼럼을 쌍으로 묶어서 동시에 비교하는 방식
+-- 2) UNPAIRWISE : 칼럼별로 나누어서 비교한 후, AND 연산을 하는 방식
+
+-- 1) PAIRWISE 다중 칼럼 서브쿼리
+-- 문1)    PAIRWISE 비교 방법에 의해 학년별로 몸무게가 최소인 
+--          학생의 이름, 학년, 몸무게를 출력하여라
+
+
+select name,grade,weight
+from student
+where (grade,weight) in (select grade,min(weight)
+                         from student
+                         group by grade);
+
+--  2) UNPAIRWISE : 칼럼별로 나누어서 비교한 후, AND 연산을 하는 방식
+-- UNPAIRWISE 비교 방법에 의해 학년별로 몸무게가 최소인 학생의 이름, 학년, 몸무게를 출력
+
+
+select name,grade,weight
+from student
+--1234
+where grade in(select grade 
+              from student 
+            group by grade)
+-- 52,42,70,72
+and  weight in (SELECT MIN(weight)
+                FROM stuent
+                group by grade);
+                
+                
+-- 상호연관 서브쿼리     ***
+-- 메인쿼리절과 서브쿼리간에 검색 결과를 교환하는 서브쿼리
+
+-- 문1)  각 학과 학생의 평균 키보다 키가 큰 학생의 이름, 학과 번호, 키를 출력하여라
+                    --< 1번from on join where group having select order
+                    --< 3번
+select deptno,name,grade ,height
+from student s1   
+where height > (select avg(height)
+                from student s2
+--                                 실행순서 2 
+                where s2.deptno = s1.deptno
+                )
+order by deptno;
+
+
+-------------  HW  -----------------------
+
+
+-- 1. Blake와 같은 부서에 있는 모든 사원에 대해서 사원 이름과 입사일을 디스플레이하라
+select ename,hiredate from emp
+where deptno = ( 
+                select deptno
+                from emp
+                where ename = 'BLAKE');
+
+-- 2. 평균 급여 이상을 받는 모든 사원에 대해서 사원 번호와 이름을 디스플레이하는 질의문을 생성. 
+--    단 출력은 급여 내림차순 정렬하라
+
+select ename,empno
+from emp
+where sal >= (
+        select  avg(sal)
+        from emp
+        )
+order by DESC;
+
+
+-- 3. 보너스를 받는 어떤 사원의 부서 번호와 급여에 일치하는 사원의 이름, 부서 번호 그리고 급여를 디스플레이하라.
+
