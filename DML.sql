@@ -1,27 +1,27 @@
---  ë°ì´í„° ì¡°ìž‘ì–´ (DML:Data Manpulation Language)  **                  ----------
--- 1.ì •ì˜ : í…Œì´ë¸”ì— ìƒˆë¡œìš´ ë°ì´í„°ë¥¼ ìž…ë ¥í•˜ê±°ë‚˜ ê¸°ì¡´ ë°ì´í„°ë¥¼ ìˆ˜ì • ë˜ëŠ” ì‚­ì œí•˜ê¸° ìœ„í•œ ëª…ë ¹ì–´
--- 2. ì¢…ë¥˜ 
---  1) INSERT : ìƒˆë¡œìš´ ë°ì´í„° ìž…ë ¥ ëª…ë ¹ì–´
---  2) UPDATE : ê¸°ì¡´ ë°ì´í„° ìˆ˜ì • ëª…ë ¹ì–´
---  3) DELETE : ê¸°ì¡´ ë°ì´í„° ì‚­ì œ ëª…ë ¹ì–´
---  4) MERGE : ë‘ê°œì˜ í…Œì´ë¸”ì„ í•˜ë‚˜ì˜ í…Œì´ë¸”ë¡œ ë³‘í•©í•˜ëŠ” ëª…ë ¹ì–´
+--  µ¥ÀÌÅÍ Á¶ÀÛ¾î (DML:Data Manpulation Language)  **                  ----------
+-- 1.Á¤ÀÇ : Å×ÀÌºí¿¡ »õ·Î¿î µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÏ°Å³ª ±âÁ¸ µ¥ÀÌÅÍ¸¦ ¼öÁ¤ ¶Ç´Â »èÁ¦ÇÏ±â À§ÇÑ ¸í·É¾î
+-- 2. Á¾·ù 
+--  1) INSERT : »õ·Î¿î µ¥ÀÌÅÍ ÀÔ·Â ¸í·É¾î
+--  2) UPDATE : ±âÁ¸ µ¥ÀÌÅÍ ¼öÁ¤ ¸í·É¾î
+--  3) DELETE : ±âÁ¸ µ¥ÀÌÅÍ »èÁ¦ ¸í·É¾î
+--  4) MERGE : µÎ°³ÀÇ Å×ÀÌºíÀ» ÇÏ³ªÀÇ Å×ÀÌºí·Î º´ÇÕÇÏ´Â ¸í·É¾î
 
 -- 1) Insert
 --NOT enough values
-INSERT INTO DEPT VALUES(71,'ì¸ì‚¬');
-INSERT INTO DEPT VALUES(71,'ì¸ì‚¬','ì´ëŒ€');
-INSERT INTO DEPT(deptno,Dname) VALUES (72,'íšŒê³„íŒ€');
-INSERT INTO DEPT(deptno,Dname,LOC) VALUES (72,'ìžìž¬íŒ€','ì‹ ëŒ€ë°©');
+INSERT INTO DEPT VALUES(71,'ÀÎ»ç');
+INSERT INTO DEPT VALUES(71,'ÀÎ»ç','ÀÌ´ë');
+INSERT INTO DEPT(deptno,Dname) VALUES (72,'È¸°èÆÀ');
+INSERT INTO DEPT(deptno,Dname,LOC) VALUES (72,'ÀÚÀçÆÀ','½Å´ë¹æ');
 -- unique constraint
-INSERT INTO DEPT(deptno,LOC,Dname) VALUES (72,'ì¶©ì •ë¡œ','íšŒê³„íŒ€');
-INSERT INTO DEPT(deptno,LOC) VALUES (73,'í™ëŒ€');
-INSERT INTO DEPT(deptno,LOC) VALUES (77,'ë‹¹ì‚°');
+INSERT INTO DEPT(deptno,LOC,Dname) VALUES (72,'ÃæÁ¤·Î','È¸°èÆÀ');
+INSERT INTO DEPT(deptno,LOC) VALUES (73,'È«´ë');
+INSERT INTO DEPT(deptno,LOC) VALUES (77,'´ç»ê');
 
 
 INSERT INTO professor( profno,name,position,hiredate,deptno)
-            VALUES(9920,'ìµœìœ¤ì‹','ì¡°êµìˆ˜'  ,TO_DATE('2006/01/01','YYYY/MM/DD'),102);
+            VALUES(9920,'ÃÖÀ±½Ä','Á¶±³¼ö'  ,TO_DATE('2006/01/01','YYYY/MM/DD'),102);
 INSERT INTO professor( profno,name,position,hiredate,deptno)
-            VALUES(9910,'ë°±ë¯¸ì„ ','ì „ìž„ê°•ì‚¬'  ,SYSDATE,102);          
+            VALUES(9910,'¹é¹Ì¼±','ÀüÀÓ°­»ç'  ,SYSDATE,102);          
         
 DROP TABLE JOB3;
 CREATE TABLE JOB3
@@ -31,10 +31,10 @@ CREATE TABLE JOB3
 );
 
 
-INSERT INTO JOB3 VALUES(10,'ê³µë¬´ì›');
-INSERT INTO JOB3 VALUES(11,'í•™ìƒ');
-INSERT INTO JOB3 VALUES(12,'ëŒ€ê¸°ì—…');
-INSERT INTO JOB3 VALUES(13,'ì¤‘ì†Œê¸°ì—…');
+INSERT INTO JOB3 VALUES(10,'°ø¹«¿ø');
+INSERT INTO JOB3 VALUES(11,'ÇÐ»ý');
+INSERT INTO JOB3 VALUES(12,'´ë±â¾÷');
+INSERT INTO JOB3 VALUES(13,'Áß¼Ò±â¾÷');
 
 CREATE TABLE Religion
 (
@@ -42,49 +42,49 @@ CREATE TABLE Religion
     religion_name   VARCHAR2(20)
 );
 
-INSERT INTO JOB3 VALUES(10,'ê¸°ë„êµ');
-INSERT INTO JOB3 VALUES(20,'ì¹´í†¨ë¦­');
-INSERT INTO JOB3 VALUES(30,'ë¶‰');
-INSERT INTO JOB3 VALUES(40,'ë¬´êµ');
+INSERT INTO JOB3 VALUES(10,'±âµµ±³');
+INSERT INTO JOB3 VALUES(20,'Ä«Åç¸¯');
+INSERT INTO JOB3 VALUES(30,'ºÓ');
+INSERT INTO JOB3 VALUES(40,'¹«±³');
 
 COMMIT;
 
 
 -------------------------------------------------
------   ë‹¤ì¤‘ í–‰ ìž…ë ¥                        ------
+-----   ´ÙÁß Çà ÀÔ·Â                        ------
 -------------------------------------------------
--- 1. ìƒì„±ëœ TBLì´ìš© ì‹ ê·œ TBL ìƒì„±
+-- 1. »ý¼ºµÈ TBLÀÌ¿ë ½Å±Ô TBL »ý¼º
 
 CREATE Table dept_second
 AS SELECT * FROM dept;
 
--- 2.ê°€ê³µ TBLìƒì„±
+-- 2.°¡°ø TBL»ý¼º
 CREATE Table emp20
 AS
     SELECT empno,ename,sal*12 annsal
     from emp
     where deptno = 20;
     
--- 3. TBL êµ¬ì¡°ë§Œ
+-- 3. TBL ±¸Á¶¸¸
 CREATE TABLE dept30
 AS 
     SELECT deptno,dname
     FROM DEPT
-    where 1=0; -- 0ê³¼ 1ì€ ê°™ì„ ìˆ˜ê°€ ì—†ë‹¤ ì• ì´ˆì— ë¶€ì •í˜• '
+    where 1=0; -- 0°ú 1Àº °°À» ¼ö°¡ ¾ø´Ù ¾ÖÃÊ¿¡ ºÎÁ¤Çü '
     
 ALTER TABLE dept30
 ADD(birth Date);
 
 
-INSERT INTO dept30 VALUES(10,'ì¤‘ì•™í•™êµ',sysdate);
-INSERT INTO dept30 VALUES(10,'ì¤‘ì•™ì •ë³´í•™êµ',sysdate);
-UPDATE dept30  SET deptno=10 where dname='ì¤‘ì•™í•™êµ';
---5COLUMN ë³€ê²½ -->ê¸°ì¡´ dataë³´ë‹¤ëŠ” ì ê²ŒëŠ” ì•ˆë¨
+INSERT INTO dept30 VALUES(10,'Áß¾ÓÇÐ±³',sysdate);
+INSERT INTO dept30 VALUES(10,'Áß¾ÓÁ¤º¸ÇÐ±³',sysdate);
+UPDATE dept30  SET deptno=10 where dname='Áß¾ÓÇÐ±³';
+--5COLUMN º¯°æ -->±âÁ¸ dataº¸´Ù´Â Àû°Ô´Â ¾ÈµÊ
 ALTER TABLE dept30
 Modify dname varchar2(30);
 
 
--- ì¤„ì¼ìˆ˜ëŠ” ìžˆì§€ë§Œ ê¸°ì¡´ê°’ì˜maxë³´ë‹¤ëŠ” 
+-- ÁÙÀÏ¼ö´Â ÀÖÁö¸¸ ±âÁ¸°ªÀÇmaxº¸´Ù´Â 
 ALTER TABLE dept30
 Modify dname varchar2(10);
 
@@ -92,12 +92,12 @@ ALTER TABLE dept30
 Drop column dname;
 
 
---7 TBL ëª… ë³€ê²½
+--7 TBL ¸í º¯°æ
 RENAME dept30 to dept35;
 
 
 
---8 TBL ì œê±°
+--8 TBL Á¦°Å
 DROP Table dept35;
 
 
@@ -106,8 +106,8 @@ DROP Table dept35;
 TRUNCATE table dept_second;
 
 
---ddlì€ ì‹¤í–‰ê³¼ ë™ì‹œì— commitë¨ 
---dmlì€ ì»¤ë°‹í•´ì•¼ë¨ ë²„í¼ì— ìœ ì§€ ë˜ê¸° ë•Œë¬¸ì— commit
+--ddlÀº ½ÇÇà°ú µ¿½Ã¿¡ commitµÊ 
+--dmlÀº Ä¿¹ÔÇØ¾ßµÊ ¹öÆÛ¿¡ À¯Áö µÇ±â ¶§¹®¿¡ commit
 
 CREATE TABLE height_info
 (
@@ -124,9 +124,9 @@ CREATE TABLE weight_info
 
 );
 
--- INSERT ALL(unconditional INSERT ALL) ëª…ë ¹ë¬¸
--- ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ ì§‘í•©ì„ ì¡°ê±´ì—†ì´ ì—¬ëŸ¬ í…Œì´ë¸”ì— ë™ì‹œì— ìž…ë ¥
--- ì„œë¸Œì¿¼ë¦¬ì˜ ì»¬ëŸ¼ ì´ë¦„ê³¼ ë°ì´í„°ê°€ ìž…ë ¥ë˜ëŠ” í…Œì´ë¸”ì˜ ì¹¼ëŸ¼ì´ ë°˜ë“œì‹œ ë™ì¼í•´ì•¼ í•¨
+-- INSERT ALL(unconditional INSERT ALL) ¸í·É¹®
+-- ¼­ºêÄõ¸®ÀÇ °á°ú ÁýÇÕÀ» Á¶°Ç¾øÀÌ ¿©·¯ Å×ÀÌºí¿¡ µ¿½Ã¿¡ ÀÔ·Â
+-- ¼­ºêÄõ¸®ÀÇ ÄÃ·³ ÀÌ¸§°ú µ¥ÀÌÅÍ°¡ ÀÔ·ÂµÇ´Â Å×ÀÌºíÀÇ Ä®·³ÀÌ ¹Ýµå½Ã µ¿ÀÏÇØ¾ß ÇÔ
 INSERT ALL
 INTO height_info  VALUES(stduNo,name,height)
 INTO weight_info  VALUES(stduNo,name,weight)
@@ -139,19 +139,11 @@ DELETE weight_info;
 
 
 
--- í•™ìƒ í…Œì´ë¸”ì—ì„œ 2í•™ë…„ ì´ìƒì˜ í•™ìƒì„ ê²€ìƒ‰í•˜ì—¬ 
--- height_info í…Œì´ë¸”ì—ëŠ” í‚¤ê°€ 170ë³´ë‹¤ í° í•™ìƒì˜ í•™ë²ˆ, ì´ë¦„, í‚¤ë¥¼ ìž…ë ¥
--- weight_info í…Œì´ë¸”ì—ëŠ” ëª¸ë¬´ê²Œê°€ 70ë³´ë‹¤ í° í•™ìƒì˜ í•™ë²ˆ, ì´ë¦„, ëª¸ë¬´ê²Œë¥¼ 
--- ê°ê° ìž…ë ¥í•˜ì—¬ë¼
+-- ÇÐ»ý Å×ÀÌºí¿¡¼­ 2ÇÐ³â ÀÌ»óÀÇ ÇÐ»ýÀ» °Ë»öÇÏ¿© 
+-- height_info Å×ÀÌºí¿¡´Â Å°°¡ 170º¸´Ù Å« ÇÐ»ýÀÇ ÇÐ¹ø, ÀÌ¸§, Å°¸¦ ÀÔ·Â
+-- weight_info Å×ÀÌºí¿¡´Â ¸ö¹«°Ô°¡ 70º¸´Ù Å« ÇÐ»ýÀÇ ÇÐ¹ø, ÀÌ¸§, ¸ö¹«°Ô¸¦ 
+-- °¢°¢ ÀÔ·ÂÇÏ¿©¶ó
 
--- INSERT ALL 
--- [WHEN ì¡°ê±´ì ˆ1 THEN
--- INTO [table1] VLAUES[(column1, column2,â€¦)]
--- [WHEN ì¡°ê±´ì ˆ2 THEN
--- INTO [table2] VLAUES[(column1, column2,â€¦)]
--- [ELSE
--- INTO [table3] VLAUES[(column1, column2,â€¦)]
--- subquery;
 
 INSERT ALL
 WHEN height> 170 Then
@@ -163,103 +155,100 @@ FROM student
 WHERE grade >='2';
 
 
--- ë°ì´í„° ìˆ˜ì • ê°œìš”
--- UPDATE ëª…ë ¹ë¬¸ì€ í…Œì´ë¸”ì— ì €ìž¥ëœ ë°ì´í„° ìˆ˜ì •ì„ ìœ„í•œ ì¡°ìž‘ì–´
--- WHERE ì ˆì„ ìƒëžµí•˜ë©´ í…Œì´ë¸”ì˜ ëª¨ë“  í–‰ì„ ìˆ˜ì •
+
+
+-- µ¥ÀÌÅÍ ¼öÁ¤ °³¿ä
+-- UPDATE ¸í·É¹®Àº Å×ÀÌºí¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ ¼öÁ¤À» À§ÇÑ Á¶ÀÛ¾î
+-- WHERE ÀýÀ» »ý·«ÇÏ¸é Å×ÀÌºíÀÇ ¸ðµç ÇàÀ» ¼öÁ¤
 --- Update 
--- ë¬¸1) êµìˆ˜ ë²ˆí˜¸ê°€ 9903ì¸ êµìˆ˜ì˜ í˜„ìž¬ ì§ê¸‰ì„ â€˜ë¶€êµìˆ˜â€™ë¡œ ìˆ˜ì •í•˜ì—¬ë¼
+-- ¹®1) ±³¼ö ¹øÈ£°¡ 9903ÀÎ ±³¼öÀÇ ÇöÀç Á÷±ÞÀ» ¡®ºÎ±³¼ö¡¯·Î ¼öÁ¤ÇÏ¿©¶ó
 
 UPDATE PROFESSOR SET
-position='ë¶€êµìˆ˜'
+position='ºÎ±³¼ö'
 where profno = 9903;
 
 Rollback;
 
---  ë¬¸2) ì„œë¸Œì¿¼ë¦¬ë¥¼ ì´ìš©í•˜ì—¬ í•™ë²ˆì´ 10201ì¸ í•™ìƒì˜ í•™ë…„ê³¼ í•™ê³¼ ë²ˆí˜¸ë¥¼
---        10103 í•™ë²ˆ í•™ìƒì˜ í•™ë…„ê³¼ í•™ê³¼ ë²ˆí˜¸ì™€ ë™ì¼í•˜ê²Œ ìˆ˜ì •í•˜ì—¬ë¼
-
+--  ¹®2) ¼­ºêÄõ¸®¸¦ ÀÌ¿ëÇÏ¿© ÇÐ¹øÀÌ 10201ÀÎ ÇÐ»ýÀÇ ÇÐ³â°ú ÇÐ°ú ¹øÈ£¸¦
+--        10103 ÇÐ¹ø ÇÐ»ýÀÇ ÇÐ³â°ú ÇÐ°ú ¹øÈ£¿Í µ¿ÀÏÇÏ°Ô ¼öÁ¤ÇÏ¿©¶ó
 UPDATE student set 
-(grade,deptno )=(  --ì‹±ê¸€ rowë¡œ ë‚˜ì™€ì„œ ==ë¡œ ë¨
+(grade,deptno )=(  --½Ì±Û row·Î ³ª¿Í¼­ ==·Î µÊ
                     select grade,deptno 
                     from student 
                     where  deptno =  10103)
                     
 where deptno = 10201;              
+-- µ¥ÀÌÅÍ »èÁ¦ °³¿ä
+-- DELETE ¸í·É¹®Àº Å×ÀÌºí¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ »èÁ¦¸¦ À§ÇÑ Á¶ÀÛ¾î
+-- WHERE ÀýÀ» »ý·«ÇÏ¸é Å×ÀÌºíÀÇ ¸ðµç Çà »èÁ¦
 
-
--- ë°ì´í„° ì‚­ì œ ê°œìš”
--- DELETE ëª…ë ¹ë¬¸ì€ í…Œì´ë¸”ì— ì €ìž¥ëœ ë°ì´í„° ì‚­ì œë¥¼ ìœ„í•œ ì¡°ìž‘ì–´
--- WHERE ì ˆì„ ìƒëžµí•˜ë©´ í…Œì´ë¸”ì˜ ëª¨ë“  í–‰ ì‚­ì œ
-
--- ë¬¸1) í•™ìƒ í…Œì´ë¸”ì—ì„œ í•™ë²ˆì´ 20103ì¸ í•™ìƒì˜ ë°ì´í„°ë¥¼ ì‚­ì œ
+-- ¹®1) ÇÐ»ý Å×ÀÌºí¿¡¼­ ÇÐ¹øÀÌ 20103ÀÎ ÇÐ»ýÀÇ µ¥ÀÌÅÍ¸¦ »èÁ¦
 
 delete from student where studno = 20103;
 
---  ë¬¸2) í•™ìƒ í…Œì´ë¸”ì—ì„œ ì»´í“¨í„°ê³µí•™ê³¼ì— ì†Œì†ëœ í•™ìƒì„ ëª¨ë‘ ì‚­ì œí•˜ì—¬ë¼.
+--  ¹®2) ÇÐ»ý Å×ÀÌºí¿¡¼­ ÄÄÇ»ÅÍ°øÇÐ°ú¿¡ ¼Ò¼ÓµÈ ÇÐ»ýÀ» ¸ðµÎ »èÁ¦ÇÏ¿©¶ó.
 DELETE from student 
 where deptno = (select deptno 
                 from department
-                where dname = 'ì»´í“¨í„°ê³µí•™ê³¼');
+                where dname = 'ÄÄÇ»ÅÍ°øÇÐ°ú');
 RoLLBACK;
 
 
 ----------------------------------------------------------------------------------
 ---- MERGE
---  1. MERGE ê°œìš”
---     êµ¬ì¡°ê°€ ê°™ì€ ë‘ê°œì˜ í…Œì´ë¸”ì„ ë¹„êµí•˜ì—¬ í•˜ë‚˜ì˜ í…Œì´ë¸”ë¡œ í•©ì¹˜ê¸° ìœ„í•œ ë°ì´í„° ì¡°ìž‘ì–´
---     WHEN ì ˆì˜ ì¡°ê±´ì ˆì—ì„œ ê²°ê³¼ í…Œì´ë¸”ì— í•´ë‹¹ í–‰ì´ ì¡´ìž¬í•˜ë©´ UPDATE ëª…ë ¹ë¬¸ì— ì˜í•´ ìƒˆë¡œìš´ ê°’ìœ¼ë¡œ ìˆ˜ì •,
---     ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ INSERT ëª…ë ¹ë¬¸ìœ¼ë¡œ ìƒˆë¡œìš´ í–‰ì„ ì‚½ìž…
+--  1. MERGE °³¿ä
+--     ±¸Á¶°¡ °°Àº µÎ°³ÀÇ Å×ÀÌºíÀ» ºñ±³ÇÏ¿© ÇÏ³ªÀÇ Å×ÀÌºí·Î ÇÕÄ¡±â À§ÇÑ µ¥ÀÌÅÍ Á¶ÀÛ¾î
+--     WHEN ÀýÀÇ Á¶°ÇÀý¿¡¼­ °á°ú Å×ÀÌºí¿¡ ÇØ´ç ÇàÀÌ Á¸ÀçÇÏ¸é UPDATE ¸í·É¹®¿¡ ÀÇÇØ »õ·Î¿î °ªÀ¸·Î ¼öÁ¤,
+--     ±×·¸Áö ¾ÊÀ¸¸é INSERT ¸í·É¹®À¸·Î »õ·Î¿î ÇàÀ» »ðÀÔ
 ------------------------------------------------------------------------------------
 
--- 1] MERGE ì˜ˆë¹„ìž‘ì—… 
---  ìƒí™© 
--- 1) êµìˆ˜ê°€ ëª…ì˜ˆêµìˆ˜ë¡œ 2í–‰ Update
--- 2) ê¹€ë„ê²½ ì”¨ê°€ ì‹ ê·œ Insert
+-- 1] MERGE ¿¹ºñÀÛ¾÷ 
+--  »óÈ² 
+-- 1) ±³¼ö°¡ ¸í¿¹±³¼ö·Î 2Çà Update
+-- 2) ±èµµ°æ ¾¾°¡ ½Å±Ô Insert
 
 
 CREATE TABLE PROFESSOR_TEMP
 as SELECT * from professor
-    WHERE position = 'êµìˆ˜';
+    WHERE position = '±³¼ö';
     
     
 UPDATE PROFESSOR_TEMP
-SET        position = 'ëª…ì˜ˆêµìˆ˜'
-WHERE position ='êµìˆ˜';
+SET        position = '¸í¿¹±³¼ö'
+WHERE position ='±³¼ö';
 
 INSERT INTO professor_temp
-values(9999,'ìœ í¬ë¼','arom21','ì „ìž„ê°•ì‚¬',200,sysdate,10,101);
+values(9999,'À¯Èñ¶ó','arom21','ÀüÀÓ°­»ç',200,sysdate,10,101);
 
 
--- 2] professor MERGE ìˆ˜í–‰ 
--- ëª©í‘œ : professor_tempì— ìžˆëŠ” ì§ìœ„ ìˆ˜ì •ëœ ë‚´ìš©ì„ professor Tableì— Update
---          ìœ í¬ë¼  ì”¨ê°€ ì‹ ê·œ Insert ë‚´ìš©ì„ professor Tableì— Insert
--- 1) êµìˆ˜ê°€ ëª…ì˜ˆêµìˆ˜ë¡œ 2í–‰ Update
--- 2) ìœ í¬ë¼ ì”¨ê°€ ì‹ ê·œ Insert
+-- 2] professor MERGE ¼öÇà 
+-- ¸ñÇ¥ : professor_temp¿¡ ÀÖ´Â Á÷À§ ¼öÁ¤µÈ ³»¿ëÀ» professor Table¿¡ Update
+--          À¯Èñ¶ó  ¾¾°¡ ½Å±Ô Insert ³»¿ëÀ» professor Table¿¡ Insert
+-- 1) ±³¼ö°¡ ¸í¿¹±³¼ö·Î 2Çà Update
+-- 2) À¯Èñ¶ó ¾¾°¡ ½Å±Ô Insert
 
 merge into professor p
 using professor_temp f 
-on (p.profno = f.profno) --ê¸°ì¤€ì´ ë˜ëŠ”ì»¬ëŸ¼
-when matched then --pkê°€ ê°™ìœ¼ë©´ ì§ìœ„ë¥¼ update
+on (p.profno = f.profno) --±âÁØÀÌ µÇ´ÂÄÃ·³
+when matched then --pk°¡ °°À¸¸é Á÷À§¸¦ update
     update set p.position = f.position
-when not matched then   --pkê°€ ì—†ìœ¼ë©´ ì‹ ê·œ insert
+when not matched then   --pk°¡ ¾øÀ¸¸é ½Å±Ô insert
    insert values(f.profno,f.name,f.userid,f.position,f.sal,f.hiredate,f.comm,f.deptno);
    
    
    
 ---------------------------------------------------------------------------------
--- íŠ¸ëžœìž­ì…˜ ê°œìš”  ***
--- ê´€ê³„í˜• ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ì‹¤í–‰ë˜ëŠ” ì—¬ëŸ¬ ê°œì˜ SQLëª…ë ¹ë¬¸ì„ í•˜ë‚˜ì˜ ë…¼ë¦¬ì  ìž‘ì—… ë‹¨ìœ„ë¡œ ì²˜ë¦¬í•˜ëŠ” ê°œë…
--- COMMIT : íŠ¸ëžœìž­ì…˜ì˜ ì •ìƒì ì¸ ì¢…ë£Œ
---               íŠ¸ëžœìž­ì…˜ë‚´ì˜ ëª¨ë“  SQL ëª…ë ¹ë¬¸ì— ì˜í•´ ë³€ê²½ëœ ìž‘ì—… ë‚´ìš©ì„ ë””ìŠ¤í¬ì— ì˜êµ¬ì ìœ¼ë¡œ ì €ìž¥í•˜ê³  
---               íŠ¸ëžœìž­ì…˜ì„ ì¢…ë£Œ
---               í•´ë‹¹ íŠ¸ëžœìž­ì…˜ì— í• ë‹¹ëœ CPU, ë©”ëª¨ë¦¬ ê°™ì€ ìžì›ì´ í•´ì œ
---               ì„œë¡œ ë‹¤ë¥¸ íŠ¸ëžœìž­ì…˜ì„ êµ¬ë¶„í•˜ëŠ” ê¸°ì¤€
---               COMMIT ëª…ë ¹ë¬¸ ì‹¤í–‰í•˜ê¸° ì „ì— í•˜ë‚˜ì˜ íŠ¸ëžœìž­ì…˜ ë³€ê²½í•œ ê²°ê³¼ë¥¼
---               ë‹¤ë¥¸ íŠ¸ëžœìž­ì…˜ì—ì„œ ì ‘ê·¼í•  ìˆ˜ ì—†ë„ë¡ ë°©ì§€í•˜ì—¬ ì¼ê´€ì„± ìœ ì§€
+-- Æ®·£Àè¼Ç °³¿ä  ***
+-- °ü°èÇü µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ ½ÇÇàµÇ´Â ¿©·¯ °³ÀÇ SQL¸í·É¹®À» ÇÏ³ªÀÇ ³í¸®Àû ÀÛ¾÷ ´ÜÀ§·Î Ã³¸®ÇÏ´Â °³³ä
+-- COMMIT : Æ®·£Àè¼ÇÀÇ Á¤»óÀûÀÎ Á¾·á
+--               Æ®·£Àè¼Ç³»ÀÇ ¸ðµç SQL ¸í·É¹®¿¡ ÀÇÇØ º¯°æµÈ ÀÛ¾÷ ³»¿ëÀ» µð½ºÅ©¿¡ ¿µ±¸ÀûÀ¸·Î ÀúÀåÇÏ°í 
+--               Æ®·£Àè¼ÇÀ» Á¾·á
+--               ÇØ´ç Æ®·£Àè¼Ç¿¡ ÇÒ´çµÈ CPU, ¸Þ¸ð¸® °°Àº ÀÚ¿øÀÌ ÇØÁ¦
+--               ¼­·Î ´Ù¸¥ Æ®·£Àè¼ÇÀ» ±¸ºÐÇÏ´Â ±âÁØ
+--               COMMIT ¸í·É¹® ½ÇÇàÇÏ±â Àü¿¡ ÇÏ³ªÀÇ Æ®·£Àè¼Ç º¯°æÇÑ °á°ú¸¦
+--               ´Ù¸¥ Æ®·£Àè¼Ç¿¡¼­ Á¢±ÙÇÒ ¼ö ¾øµµ·Ï ¹æÁöÇÏ¿© ÀÏ°ü¼º À¯Áö
  
--- ROLLBACK : íŠ¸ëžœìž­ì…˜ì˜ ì „ì²´ ì·¨ì†Œ
---                   íŠ¸ëžœìž­ì…˜ë‚´ì˜ ëª¨ë“  SQL ëª…ë ¹ë¬¸ì— ì˜í•´ ë³€ê²½ëœ ìž‘ì—… ë‚´ìš©ì„ ì „ë¶€ ì·¨ì†Œí•˜ê³  íŠ¸ëžœìž­ì…˜ì„ ì¢…ë£Œ
---                   CPU,ë©”ëª¨ë¦¬ ê°™ì€ í•´ë‹¹ íŠ¸ëžœìž­ì…˜ì— í• ë‹¹ëœ ìžì›ì„ í•´ì œ, íŠ¸ëžœìž­ì…˜ì„ ê°•ì œ ì¢…ë£Œ
+-- ROLLBACK : Æ®·£Àè¼ÇÀÇ ÀüÃ¼ Ãë¼Ò
+--                   Æ®·£Àè¼Ç³»ÀÇ ¸ðµç SQL ¸í·É¹®¿¡ ÀÇÇØ º¯°æµÈ ÀÛ¾÷ ³»¿ëÀ» ÀüºÎ Ãë¼ÒÇÏ°í Æ®·£Àè¼ÇÀ» Á¾·á
+--                   CPU,¸Þ¸ð¸® °°Àº ÇØ´ç Æ®·£Àè¼Ç¿¡ ÇÒ´çµÈ ÀÚ¿øÀ» ÇØÁ¦, Æ®·£Àè¼ÇÀ» °­Á¦ Á¾·á
 ---------------------------------------------------------------------------------
-
-

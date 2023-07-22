@@ -1,39 +1,39 @@
 -----------------------------------------------------------------
 ----- SUB Query   ***
--- í•˜ë‚˜ì˜ SQL ëª…ë ¹ë¬¸ì˜ ê²°ê³¼ë¥¼ ë‹¤ë¥¸ SQL ëª…ë ¹ë¬¸ì— ì „ë‹¬í•˜ê¸° ìœ„í•´ 
--- ë‘ ê°œ ì´ìƒì˜ SQL ëª…ë ¹ë¬¸ì„ í•˜ë‚˜ì˜ SQLëª…ë ¹ë¬¸ìœ¼ë¡œ ì—°ê²°í•˜ì—¬
--- ì²˜ë¦¬í•˜ëŠ” ë°©ë²•
--- ì¢…ë¥˜ 
--- 1) ë‹¨ì¼í–‰ ì„œë¸Œì¿¼ë¦¬
--- 2) ë‹¤ì¤‘í–‰ ì„œë¸Œì¿¼ë¦¬
+-- ÇÏ³ªÀÇ SQL ¸í·É¹®ÀÇ °á°ú¸¦ ´Ù¸¥ SQL ¸í·É¹®¿¡ Àü´ÞÇÏ±â À§ÇØ 
+-- µÎ °³ ÀÌ»óÀÇ SQL ¸í·É¹®À» ÇÏ³ªÀÇ SQL¸í·É¹®À¸·Î ¿¬°áÇÏ¿©
+-- Ã³¸®ÇÏ´Â ¹æ¹ý
+-- Á¾·ù 
+-- 1) ´ÜÀÏÇà ¼­ºêÄõ¸®
+-- 2) ´ÙÁßÇà ¼­ºêÄõ¸®
 
 
 -------------------------------------------------------------------
---  1. ëª©í‘œ : êµìˆ˜ í…Œì´ë¸”ì—ì„œ â€˜ì „ì€ì§€â€™ êµìˆ˜ì™€ ì§ê¸‰ì´ ë™ì¼í•œ ëª¨ë“  êµìˆ˜ì˜ ì´ë¦„ ê²€ìƒ‰
-    --    1-1 êµìˆ˜ í…Œì´ë¸”ì—ì„œ â€˜ì „ì€ì§€â€™ êµìˆ˜ì˜ ì§ê¸‰ ê²€ìƒ‰ SQL ëª…ë ¹ë¬¸ ì‹¤í–‰     
+--  1. ¸ñÇ¥ : ±³¼ö Å×ÀÌºí¿¡¼­ ¡®ÀüÀºÁö¡¯ ±³¼ö¿Í Á÷±ÞÀÌ µ¿ÀÏÇÑ ¸ðµç ±³¼öÀÇ ÀÌ¸§ °Ë»ö
+    --    1-1 ±³¼ö Å×ÀÌºí¿¡¼­ ¡®ÀüÀºÁö¡¯ ±³¼öÀÇ Á÷±Þ °Ë»ö SQL ¸í·É¹® ½ÇÇà     
 SELECT name,position
 from professor
-where name='ì „ì€ì§€';
-    -- 1-2  êµìˆ˜ í…Œì´ë¸”ì˜ ì§ê¸‰ ì¹¼ëŸ¼ì—ì„œ 1ì—ì„œ ì–»ì€ ê²°ê³¼ ê°’ê³¼ ë™ì¼í•œ ì§ê¸ˆì„ ê°€ì§„ êµìˆ˜ ê²€ìƒ‰ ëª…ë ¹ë¬¸ ì‹¤í–‰
+where name='ÀüÀºÁö';
+    -- 1-2  ±³¼ö Å×ÀÌºíÀÇ Á÷±Þ Ä®·³¿¡¼­ 1¿¡¼­ ¾òÀº °á°ú °ª°ú µ¿ÀÏÇÑ Á÷±ÝÀ» °¡Áø ±³¼ö °Ë»ö ¸í·É¹® ½ÇÇà
 select name,position
 from professor
-where position='ì „ìž„ê°•ì‚¬';
+where position='ÀüÀÓ°­»ç';
 
 SELECT name,position 
 from professor
 where position = (
                     SELECT position 
                     from professor 
-                    where name = 'ì „ì€ì§€');
+                    where name = 'ÀüÀºÁö');
                     
                     
--- ì¢…ë¥˜ 
--- 1) ë‹¨ì¼í–‰ ì„œë¸Œì¿¼ë¦¬
---  ì„œë¸Œì¿¼ë¦¬ì—ì„œ ë‹¨ í•˜ë‚˜ì˜ í–‰ë§Œì„ ê²€ìƒ‰í•˜ì—¬ ë©”ì¸ì¿¼ë¦¬ì— ë°˜í™˜í•˜ëŠ” ì§ˆì˜ë¬¸
---  ë©”ì¸ì¿¼ë¦¬ì˜ WHERE ì ˆì—ì„œ ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ì™€ ë¹„êµí•  ê²½ìš°ì—ëŠ” ë°˜ë“œì‹œ ë‹¨ì¼í–‰ ë¹„êµ ì—°ì‚°ìž ì¤‘ 
---  í•˜ë‚˜ë§Œ ì‚¬ìš©í•´ì•¼í•¨
+-- Á¾·ù 
+-- 1) ´ÜÀÏÇà ¼­ºêÄõ¸®
+--  ¼­ºêÄõ¸®¿¡¼­ ´Ü ÇÏ³ªÀÇ Çà¸¸À» °Ë»öÇÏ¿© ¸ÞÀÎÄõ¸®¿¡ ¹ÝÈ¯ÇÏ´Â ÁúÀÇ¹®
+--  ¸ÞÀÎÄõ¸®ÀÇ WHERE Àý¿¡¼­ ¼­ºêÄõ¸®ÀÇ °á°ú¿Í ºñ±³ÇÒ °æ¿ì¿¡´Â ¹Ýµå½Ã ´ÜÀÏÇà ºñ±³ ¿¬»êÀÚ Áß 
+--  ÇÏ³ª¸¸ »ç¿ëÇØ¾ßÇÔ
 
---  ë¬¸1) ì‚¬ìš©ìž ì•„ì´ë””ê°€ â€˜jun123â€™ì¸ í•™ìƒê³¼ ê°™ì€ í•™ë…„ì¸ í•™ìƒì˜ í•™ë²ˆ, ì´ë¦„, í•™ë…„ì„ ì¶œë ¥í•˜ì—¬ë¼
+--  ¹®1) »ç¿ëÀÚ ¾ÆÀÌµð°¡ ¡®jun123¡¯ÀÎ ÇÐ»ý°ú °°Àº ÇÐ³âÀÎ ÇÐ»ýÀÇ ÇÐ¹ø, ÀÌ¸§, ÇÐ³âÀ» Ãâ·ÂÇÏ¿©¶ó
 SELECT profno,name,grade
 FROM student
 where grade = ( 
@@ -41,8 +41,8 @@ where grade = (
                 from student 
                 where userid = 'jun123');
                 
---  ë¬¸2)  101ë²ˆ í•™ê³¼ í•™ìƒë“¤ì˜ í‰ê·  ëª¸ë¬´ê²Œ/ë³´ë‹¤ ëª¸ë¬´ê²Œê°€ ì ì€ í•™ìƒì˜ ì´ë¦„, í•™ë…„ , í•™ê³¼ë²ˆí˜¸, ëª¸ë¬´ê²Œë¥¼  ì¶œë ¥
---  ì¡°ê±´ : í•™ê³¼ë³„ ì¶œë ¥      
+--  ¹®2)  101¹ø ÇÐ°ú ÇÐ»ýµéÀÇ Æò±Õ ¸ö¹«°Ô/º¸´Ù ¸ö¹«°Ô°¡ ÀûÀº ÇÐ»ýÀÇ ÀÌ¸§, ÇÐ³â , ÇÐ°ú¹øÈ£, ¸ö¹«°Ô¸¦  Ãâ·Â
+--  Á¶°Ç : ÇÐ°úº° Ãâ·Â      
                 
 SELECT  name,grade,deptno,weight
 FROM student
@@ -53,9 +53,9 @@ order by deptno
 ; 
 
 
---  ë¬¸3) 20101ë²ˆ í•™ìƒê³¼ í•™ë…„ì´ ê°™ê³ , í‚¤ëŠ” 20101ë²ˆ í•™ìƒë³´ë‹¤ í° í•™ìƒì˜ 
--- ì´ë¦„, í•™ë…„, í‚¤ë¥¼ ì¶œë ¥í•˜ì—¬ë¼
---  ì¡°ê±´ : í•™ê³¼ë³„ ì¶œë ¥
+--  ¹®3) 20101¹ø ÇÐ»ý°ú ÇÐ³âÀÌ °°°í, Å°´Â 20101¹ø ÇÐ»ýº¸´Ù Å« ÇÐ»ýÀÇ 
+-- ÀÌ¸§, ÇÐ³â, Å°¸¦ Ãâ·ÂÇÏ¿©¶ó
+--  Á¶°Ç : ÇÐ°úº° Ãâ·Â
 
 select name,grade,height
 from student
@@ -70,8 +70,8 @@ and grade  = (
                 studno =20101)
 order by deptno; 
 
--- ë¬¸4) 101ë²ˆ í•™ê³¼ í•™ìƒë“¤ì˜ í‰ê·  ëª¸ë¬´ê²Œë³´ë‹¤ ëª¸ë¬´ê²Œê°€ ì ì€ í•™ìƒì˜ ì´ë¦„, í•™ê³¼ë²ˆí˜¸, ëª¸ë¬´ê²Œë¥¼ ì¶œë ¥í•˜ì—¬ë¼
---  ì¡°ê±´ : í•™ê³¼ë³„ ì¶œë ¥
+-- ¹®4) 101¹ø ÇÐ°ú ÇÐ»ýµéÀÇ Æò±Õ ¸ö¹«°Ôº¸´Ù ¸ö¹«°Ô°¡ ÀûÀº ÇÐ»ýÀÇ ÀÌ¸§, ÇÐ°ú¹øÈ£, ¸ö¹«°Ô¸¦ Ãâ·ÂÇÏ¿©¶ó
+--  Á¶°Ç : ÇÐ°úº° Ãâ·Â
 
 select name,deptno,weight
 from student
@@ -83,20 +83,20 @@ order by deptno;
 
 
 
--- 2) ë‹¤ì¤‘í–‰ ì„œë¸Œì¿¼ë¦¬
--- ì„œë¸Œì¿¼ë¦¬ì—ì„œ ë°˜í™˜ë˜ëŠ” ê²°ê³¼ í–‰ì´ í•˜ë‚˜ ì´ìƒì¼ ë•Œ ì‚¬ìš©í•˜ëŠ” ì„œë¸Œì¿¼ë¦¬
--- ë©”ì¸ì¿¼ë¦¬ì˜ WHERE ì ˆì—ì„œ ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ì™€ ë¹„êµí•  ê²½ìš°ì—ëŠ” ë‹¤ì¤‘ í–‰ ë¹„êµ ì—°ì‚°ìž ë¥¼ ì‚¬ìš©í•˜ì—¬ ë¹„êµ
--- ë‹¤ì¤‘ í–‰ ë¹„êµ ì—°ì‚°ìž : IN, ANY, SOME, ALL, EXISTS
--- 1) IN               : ë©”ì¸ ì¿¼ë¦¬ì˜ ë¹„êµ ì¡°ê±´ì´ ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ì¤‘ì—ì„œ í•˜ë‚˜ë¼ë„ ì¼ì¹˜í•˜ë©´ ì°¸, â€˜=â€˜ë¹„êµë§Œ ê°€ëŠ¥
--- 2) ANY, SOME  : ë©”ì¸ ì¿¼ë¦¬ì˜ ë¹„êµ ì¡°ê±´ì´ ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ì¤‘ì—ì„œ í•˜ë‚˜ë¼ë„ ì¼ì¹˜í•˜ë©´ ì°¸
--- 3) ALL             : ë©”ì¸ ì¿¼ë¦¬ì˜ ë¹„êµ ì¡°ê±´ì´ ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ì¤‘ì—ì„œ ëª¨ë“ ê°’ì´ ì¼ì¹˜í•˜ë©´ ì°¸, 
--- 4) EXISTS        : ë©”ì¸ ì¿¼ë¦¬ì˜ ë¹„êµ ì¡°ê±´ì´ ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ì¤‘ì—ì„œ ë§Œì¡±í•˜ëŠ” ê°’ì´ í•˜ë‚˜ë¼ë„ ì¡´ìž¬í•˜ë©´ ì°¸
+-- 2) ´ÙÁßÇà ¼­ºêÄõ¸®
+-- ¼­ºêÄõ¸®¿¡¼­ ¹ÝÈ¯µÇ´Â °á°ú ÇàÀÌ ÇÏ³ª ÀÌ»óÀÏ ¶§ »ç¿ëÇÏ´Â ¼­ºêÄõ¸®
+-- ¸ÞÀÎÄõ¸®ÀÇ WHERE Àý¿¡¼­ ¼­ºêÄõ¸®ÀÇ °á°ú¿Í ºñ±³ÇÒ °æ¿ì¿¡´Â ´ÙÁß Çà ºñ±³ ¿¬»êÀÚ ¸¦ »ç¿ëÇÏ¿© ºñ±³
+-- ´ÙÁß Çà ºñ±³ ¿¬»êÀÚ : IN, ANY, SOME, ALL, EXISTS
+-- 1) IN               : ¸ÞÀÎ Äõ¸®ÀÇ ºñ±³ Á¶°ÇÀÌ ¼­ºêÄõ¸®ÀÇ °á°úÁß¿¡¼­ ÇÏ³ª¶óµµ ÀÏÄ¡ÇÏ¸é Âü, ¡®=¡®ºñ±³¸¸ °¡´É
+-- 2) ANY, SOME  : ¸ÞÀÎ Äõ¸®ÀÇ ºñ±³ Á¶°ÇÀÌ ¼­ºêÄõ¸®ÀÇ °á°úÁß¿¡¼­ ÇÏ³ª¶óµµ ÀÏÄ¡ÇÏ¸é Âü
+-- 3) ALL             : ¸ÞÀÎ Äõ¸®ÀÇ ºñ±³ Á¶°ÇÀÌ ¼­ºêÄõ¸®ÀÇ °á°úÁß¿¡¼­ ¸ðµç°ªÀÌ ÀÏÄ¡ÇÏ¸é Âü, 
+-- 4) EXISTS        : ¸ÞÀÎ Äõ¸®ÀÇ ºñ±³ Á¶°ÇÀÌ ¼­ºêÄõ¸®ÀÇ °á°úÁß¿¡¼­ ¸¸Á·ÇÏ´Â °ªÀÌ ÇÏ³ª¶óµµ Á¸ÀçÇÏ¸é Âü
 
--- 1.  IN ì—°ì‚°ìžë¥¼ ì´ìš©í•œ ë‹¤ì¤‘ í–‰ ì„œë¸Œì¿¼ë¦¬
+-- 1.  IN ¿¬»êÀÚ¸¦ ÀÌ¿ëÇÑ ´ÙÁß Çà ¼­ºêÄõ¸®
 
 SELECT name,grade,deptno
 from student
-where deptno=( --ê²°ê³¼ê°€ ë‹¤ì¤‘í–‰ì¼ ë•ŒëŠ” = ì´ ì•ˆëœë‹¤.ë‹¤ì¤‘í–‰ ì‚¬ìš©ì´ìœ 
+where deptno=( --°á°ú°¡ ´ÙÁßÇàÀÏ ¶§´Â = ÀÌ ¾ÈµÈ´Ù.´ÙÁßÇà »ç¿ëÀÌÀ¯
                
                 SELECT deptno
                 from department
@@ -105,24 +105,24 @@ where deptno=( --ê²°ê³¼ê°€ ë‹¤ì¤‘í–‰ì¼ ë•ŒëŠ” = ì´ ì•ˆëœë‹¤.ë‹¤ì¤‘í–‰ ì‚¬ìš©ì
                 
 SELECT name,grade,deptno
 from student
-where deptno IN ( --ê²°ê³¼ê°€ ë‹¤ì¤‘í–‰ì¼ ë•ŒëŠ” = ì´ ì•ˆëœë‹¤.ë‹¤ì¤‘í–‰ ì‚¬ìš©ì´ìœ 
+where deptno IN ( --°á°ú°¡ ´ÙÁßÇàÀÏ ¶§´Â = ÀÌ ¾ÈµÈ´Ù.´ÙÁßÇà »ç¿ëÀÌÀ¯
                 SELECT deptno
                 from department
-                where college=100  --> 101, 102ëž‘ ê°™ìŒ
+                where college=100  --> 101, 102¶û °°À½
                 );
 
 
---  2. ANY ì—°ì‚°ìžë¥¼ ì´ìš©í•œ ë‹¤ì¤‘ í–‰ ì„œë¸Œì¿¼ë¦¬
--- ë¬¸)ëª¨ë“  í•™ìƒ ì¤‘ì—ì„œ 4í•™ë…„ í•™ìƒ ì¤‘ì—ì„œ í‚¤ê°€ ì œì¼ ìž‘ì€ í•™ìƒë³´ë‹¤ í‚¤ê°€ í° í•™ìƒì˜ í•™ë²ˆ, ì´ë¦„, í‚¤ë¥¼ ì¶œë ¥
+--  2. ANY ¿¬»êÀÚ¸¦ ÀÌ¿ëÇÑ ´ÙÁß Çà ¼­ºêÄõ¸®
+-- ¹®)¸ðµç ÇÐ»ý Áß¿¡¼­ 4ÇÐ³â ÇÐ»ý Áß¿¡¼­ Å°°¡ Á¦ÀÏ ÀÛÀº ÇÐ»ýº¸´Ù Å°°¡ Å« ÇÐ»ýÀÇ ÇÐ¹ø, ÀÌ¸§, Å°¸¦ Ãâ·Â
 select studno, name,height
 from student
 where height > any(
-                    -- 175,176,177 -->minìƒê°
+                    -- 175,176,177 -->min»ý°¢
                     select height
                     from student
                     where grade = '4'
                     );
---- 3. ALL ì—°ì‚°ìžë¥¼ ì´ìš©í•œ ë‹¤ì¤‘ í–‰ ì„œë¸Œì¿¼ë¦¬
+--- 3. ALL ¿¬»êÀÚ¸¦ ÀÌ¿ëÇÑ ´ÙÁß Çà ¼­ºêÄõ¸®
 select studno, name,height
 from student
 where height >all(
@@ -132,19 +132,19 @@ where height >all(
                     where grade = '4'
                     );
 
---- 4. EXISTS ì—°ì‚°ìžë¥¼ ì´ìš©í•œ ë‹¤ì¤‘ í–‰ ì„œë¸Œì¿¼ë¦¬
-SELECT profno,name,sal,comm,position  -- <--- ë‹¤ì‹¤í–‰
+--- 4. EXISTS ¿¬»êÀÚ¸¦ ÀÌ¿ëÇÑ ´ÙÁß Çà ¼­ºêÄõ¸®
+SELECT profno,name,sal,comm,position  -- <--- ´Ù½ÇÇà
 from professor
 where exists(
-            --í•˜ë‚˜ë¼ë„ ì¡´ìž¬í•˜ë©´ (ì°¸ì´ë©´) ì¡°ê±´ê³¼ ê´€ê³„ì—†ì´ 
+            --ÇÏ³ª¶óµµ Á¸ÀçÇÏ¸é (ÂüÀÌ¸é) Á¶°Ç°ú °ü°è¾øÀÌ 
             
             SELECT position
             from professor
             where comm is not null);
             
             
--- ë¬¸1)  ë³´ì§ìˆ˜ë‹¹ì„ ë°›ëŠ” êµìˆ˜ê°€ í•œ ëª…ì´ë¼ë„ ìžˆìœ¼ë©´ 
---       ëª¨ë“  êµìˆ˜ì˜ êµìˆ˜ ë²ˆí˜¸, ì´ë¦„, ë³´ì§ìˆ˜ë‹¹ ê·¸ë¦¬ê³  ê¸‰ì—¬ì™€ ë³´ì§ìˆ˜ë‹¹ì˜ í•©(NULLì²˜ë¦¬)ì„ ì¶œë ¥
+-- ¹®1)  º¸Á÷¼ö´çÀ» ¹Þ´Â ±³¼ö°¡ ÇÑ ¸íÀÌ¶óµµ ÀÖÀ¸¸é 
+--       ¸ðµç ±³¼öÀÇ ±³¼ö ¹øÈ£, ÀÌ¸§, º¸Á÷¼ö´ç ±×¸®°í ±Þ¿©¿Í º¸Á÷¼ö´çÀÇ ÇÕ(NULLÃ³¸®)À» Ãâ·Â
 
 SELECT profno,name,comm,(sal+nvl(comm,0)) 
 from professor 
@@ -153,7 +153,7 @@ where exists (
             from professor
             where comm  iS not null);
             
--- ë¬¸2) í•™ìƒ ì¤‘ì—ì„œ â€˜goodstudentâ€™ì´ë¼ëŠ” ì‚¬ìš©ìž ì•„ì´ë””ê°€ ì—†ìœ¼ë©´ 1ì„ ì¶œë ¥í•˜ì—¬ë¼   
+-- ¹®2) ÇÐ»ý Áß¿¡¼­ ¡®goodstudent¡¯ÀÌ¶ó´Â »ç¿ëÀÚ ¾ÆÀÌµð°¡ ¾øÀ¸¸é 1À» Ãâ·ÂÇÏ¿©¶ó   
 
 --select 1
 --from student
@@ -172,16 +172,16 @@ select 1
 from student
 where userid not in ('goodstudent');
 
--- ë‹¤ì¤‘ ì»¬ëŸ¼ ì„œë¸Œì¿¼ë¦¬
--- ì„œë¸Œì¿¼ë¦¬ì—ì„œ ì—¬ëŸ¬ ê°œì˜ ì¹¼ëŸ¼ ê°’ì„ ê²€ìƒ‰í•˜ì—¬ ë©”ì¸ì¿¼ë¦¬ì˜ ì¡°ê±´ì ˆê³¼ ë¹„êµí•˜ëŠ” ì„œë¸Œì¿¼ë¦¬
--- ë©”ì¸ì¿¼ë¦¬ì˜ ì¡°ê±´ì ˆì—ì„œë„ ì„œë¸Œì¿¼ë¦¬ì˜ ì¹¼ëŸ¼ ìˆ˜ë§Œí¼ ì§€ì •
--- ì¢…ë¥˜
--- 1) PAIRWISE : ì¹¼ëŸ¼ì„ ìŒìœ¼ë¡œ ë¬¶ì–´ì„œ ë™ì‹œì— ë¹„êµí•˜ëŠ” ë°©ì‹
--- 2) UNPAIRWISE : ì¹¼ëŸ¼ë³„ë¡œ ë‚˜ëˆ„ì–´ì„œ ë¹„êµí•œ í›„, AND ì—°ì‚°ì„ í•˜ëŠ” ë°©ì‹
+-- ´ÙÁß ÄÃ·³ ¼­ºêÄõ¸®
+-- ¼­ºêÄõ¸®¿¡¼­ ¿©·¯ °³ÀÇ Ä®·³ °ªÀ» °Ë»öÇÏ¿© ¸ÞÀÎÄõ¸®ÀÇ Á¶°ÇÀý°ú ºñ±³ÇÏ´Â ¼­ºêÄõ¸®
+-- ¸ÞÀÎÄõ¸®ÀÇ Á¶°ÇÀý¿¡¼­µµ ¼­ºêÄõ¸®ÀÇ Ä®·³ ¼ö¸¸Å­ ÁöÁ¤
+-- Á¾·ù
+-- 1) PAIRWISE : Ä®·³À» ½ÖÀ¸·Î ¹­¾î¼­ µ¿½Ã¿¡ ºñ±³ÇÏ´Â ¹æ½Ä
+-- 2) UNPAIRWISE : Ä®·³º°·Î ³ª´©¾î¼­ ºñ±³ÇÑ ÈÄ, AND ¿¬»êÀ» ÇÏ´Â ¹æ½Ä
 
--- 1) PAIRWISE ë‹¤ì¤‘ ì¹¼ëŸ¼ ì„œë¸Œì¿¼ë¦¬
--- ë¬¸1)    PAIRWISE ë¹„êµ ë°©ë²•ì— ì˜í•´ í•™ë…„ë³„ë¡œ ëª¸ë¬´ê²Œê°€ ìµœì†Œì¸ 
---          í•™ìƒì˜ ì´ë¦„, í•™ë…„, ëª¸ë¬´ê²Œë¥¼ ì¶œë ¥í•˜ì—¬ë¼
+-- 1) PAIRWISE ´ÙÁß Ä®·³ ¼­ºêÄõ¸®
+-- ¹®1)    PAIRWISE ºñ±³ ¹æ¹ý¿¡ ÀÇÇØ ÇÐ³âº°·Î ¸ö¹«°Ô°¡ ÃÖ¼ÒÀÎ 
+--          ÇÐ»ýÀÇ ÀÌ¸§, ÇÐ³â, ¸ö¹«°Ô¸¦ Ãâ·ÂÇÏ¿©¶ó
 
 
 select name,grade,weight
@@ -190,8 +190,8 @@ where (grade,weight) in (select grade,min(weight)
                          from student
                          group by grade);
 
---  2) UNPAIRWISE : ì¹¼ëŸ¼ë³„ë¡œ ë‚˜ëˆ„ì–´ì„œ ë¹„êµí•œ í›„, AND ì—°ì‚°ì„ í•˜ëŠ” ë°©ì‹
--- UNPAIRWISE ë¹„êµ ë°©ë²•ì— ì˜í•´ í•™ë…„ë³„ë¡œ ëª¸ë¬´ê²Œê°€ ìµœì†Œì¸ í•™ìƒì˜ ì´ë¦„, í•™ë…„, ëª¸ë¬´ê²Œë¥¼ ì¶œë ¥
+--  2) UNPAIRWISE : Ä®·³º°·Î ³ª´©¾î¼­ ºñ±³ÇÑ ÈÄ, AND ¿¬»êÀ» ÇÏ´Â ¹æ½Ä
+-- UNPAIRWISE ºñ±³ ¹æ¹ý¿¡ ÀÇÇØ ÇÐ³âº°·Î ¸ö¹«°Ô°¡ ÃÖ¼ÒÀÎ ÇÐ»ýÀÇ ÀÌ¸§, ÇÐ³â, ¸ö¹«°Ô¸¦ Ãâ·Â
 
 
 select name,grade,weight
@@ -206,17 +206,17 @@ and  weight in (SELECT MIN(weight)
                 group by grade);
                 
                 
--- ìƒí˜¸ì—°ê´€ ì„œë¸Œì¿¼ë¦¬     ***
--- ë©”ì¸ì¿¼ë¦¬ì ˆê³¼ ì„œë¸Œì¿¼ë¦¬ê°„ì— ê²€ìƒ‰ ê²°ê³¼ë¥¼ êµí™˜í•˜ëŠ” ì„œë¸Œì¿¼ë¦¬
+-- »óÈ£¿¬°ü ¼­ºêÄõ¸®     ***
+-- ¸ÞÀÎÄõ¸®Àý°ú ¼­ºêÄõ¸®°£¿¡ °Ë»ö °á°ú¸¦ ±³È¯ÇÏ´Â ¼­ºêÄõ¸®
 
--- ë¬¸1)  ê° í•™ê³¼ í•™ìƒì˜ í‰ê·  í‚¤ë³´ë‹¤ í‚¤ê°€ í° í•™ìƒì˜ ì´ë¦„, í•™ê³¼ ë²ˆí˜¸, í‚¤ë¥¼ ì¶œë ¥í•˜ì—¬ë¼
-                    --< 1ë²ˆfrom on join where group having select order
-                    --< 3ë²ˆ
+-- ¹®1)  °¢ ÇÐ°ú ÇÐ»ýÀÇ Æò±Õ Å°º¸´Ù Å°°¡ Å« ÇÐ»ýÀÇ ÀÌ¸§, ÇÐ°ú ¹øÈ£, Å°¸¦ Ãâ·ÂÇÏ¿©¶ó
+                    --< 1¹øfrom on join where group having select order
+                    --< 3¹ø
 select deptno,name,grade ,height
 from student s1   
 where height > (select avg(height)
                 from student s2
---                                 ì‹¤í–‰ìˆœì„œ 2 
+--                                 ½ÇÇà¼ø¼­ 2 
                 where s2.deptno = s1.deptno
                 )
 order by deptno;
@@ -225,15 +225,15 @@ order by deptno;
 -------------  HW  -----------------------
 
 
--- 1. Blakeì™€ ê°™ì€ ë¶€ì„œì— ìžˆëŠ” ëª¨ë“  ì‚¬ì›ì— ëŒ€í•´ì„œ ì‚¬ì› ì´ë¦„ê³¼ ìž…ì‚¬ì¼ì„ ë””ìŠ¤í”Œë ˆì´í•˜ë¼
+-- 1. Blake¿Í °°Àº ºÎ¼­¿¡ ÀÖ´Â ¸ðµç »ç¿ø¿¡ ´ëÇØ¼­ »ç¿ø ÀÌ¸§°ú ÀÔ»çÀÏÀ» µð½ºÇÃ·¹ÀÌÇÏ¶ó
 select ename,hiredate from emp
 where deptno = ( 
                 select deptno
                 from emp
                 where ename = 'BLAKE');
 
--- 2. í‰ê·  ê¸‰ì—¬ ì´ìƒì„ ë°›ëŠ” ëª¨ë“  ì‚¬ì›ì— ëŒ€í•´ì„œ ì‚¬ì› ë²ˆí˜¸ì™€ ì´ë¦„ì„ ë””ìŠ¤í”Œë ˆì´í•˜ëŠ” ì§ˆì˜ë¬¸ì„ ìƒì„±. 
---    ë‹¨ ì¶œë ¥ì€ ê¸‰ì—¬ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬í•˜ë¼
+-- 2. Æò±Õ ±Þ¿© ÀÌ»óÀ» ¹Þ´Â ¸ðµç »ç¿ø¿¡ ´ëÇØ¼­ »ç¿ø ¹øÈ£¿Í ÀÌ¸§À» µð½ºÇÃ·¹ÀÌÇÏ´Â ÁúÀÇ¹®À» »ý¼º. 
+--    ´Ü Ãâ·ÂÀº ±Þ¿© ³»¸²Â÷¼ø Á¤·ÄÇÏ¶ó
 
 select ename,empno
 from emp
@@ -244,5 +244,4 @@ where sal >= (
 order by DESC;
 
 
--- 3. ë³´ë„ˆìŠ¤ë¥¼ ë°›ëŠ” ì–´ë–¤ ì‚¬ì›ì˜ ë¶€ì„œ ë²ˆí˜¸ì™€ ê¸‰ì—¬ì— ì¼ì¹˜í•˜ëŠ” ì‚¬ì›ì˜ ì´ë¦„, ë¶€ì„œ ë²ˆí˜¸ ê·¸ë¦¬ê³  ê¸‰ì—¬ë¥¼ ë””ìŠ¤í”Œë ˆì´í•˜ë¼.
-
+-- 3. º¸³Ê½º¸¦ ¹Þ´Â ¾î¶² »ç¿øÀÇ ºÎ¼­ ¹øÈ£¿Í ±Þ¿©¿¡ ÀÏÄ¡ÇÏ´Â »ç¿øÀÇ ÀÌ¸§, ºÎ¼­ ¹øÈ£ ±×¸®°í ±Þ¿©¸¦ µð½ºÇÃ·¹ÀÌÇÏ¶ó.
