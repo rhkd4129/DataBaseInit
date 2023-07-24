@@ -130,7 +130,7 @@ DROP SEQUENCE sample_SEQ;
 */
 
 
-SELECT table_name 
+SELECT table_name,tablespace_name
 FROM user_tables;
 
 SELECT *
