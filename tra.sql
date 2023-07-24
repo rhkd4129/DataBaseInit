@@ -1,29 +1,29 @@
 ---------------------------------------------------------------------------------
--- íŠ¸ëžœìž­ì…˜ ê°œìš”  ***
--- ê´€ê³„í˜• ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ì‹¤í–‰ë˜ëŠ” ì—¬ëŸ¬ ê°œì˜ SQLëª…ë ¹ë¬¸ì„ í•˜ë‚˜ì˜ ë…¼ë¦¬ì  ìž‘ì—… ë‹¨ìœ„ë¡œ ì²˜ë¦¬í•˜ëŠ” ê°œë…
--- COMMIT : íŠ¸ëžœìž­ì…˜ì˜ ì •ìƒì ì¸ ì¢…ë£Œ
---               íŠ¸ëžœìž­ì…˜ë‚´ì˜ ëª¨ë“  SQL ëª…ë ¹ë¬¸ì— ì˜í•´ ë³€ê²½ëœ ìž‘ì—… ë‚´ìš©ì„ ë””ìŠ¤í¬ì— ì˜êµ¬ì ìœ¼ë¡œ ì €ìž¥í•˜ê³  
---               íŠ¸ëžœìž­ì…˜ì„ ì¢…ë£Œ
---               í•´ë‹¹ íŠ¸ëžœìž­ì…˜ì— í• ë‹¹ëœ CPU, ë©”ëª¨ë¦¬ ê°™ì€ ìžì›ì´ í•´ì œ
---               ì„œë¡œ ë‹¤ë¥¸ íŠ¸ëžœìž­ì…˜ì„ êµ¬ë¶„í•˜ëŠ” ê¸°ì¤€
---               COMMIT ëª…ë ¹ë¬¸ ì‹¤í–‰í•˜ê¸° ì „ì— í•˜ë‚˜ì˜ íŠ¸ëžœìž­ì…˜ ë³€ê²½í•œ ê²°ê³¼ë¥¼
---               ë‹¤ë¥¸ íŠ¸ëžœìž­ì…˜ì—ì„œ ì ‘ê·¼í•  ìˆ˜ ì—†ë„ë¡ ë°©ì§€í•˜ì—¬ ì¼ê´€ì„± ìœ ì§€
+-- Æ®·£Àè¼Ç °³¿ä  ***
+-- °ü°èÇü µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ ½ÇÇàµÇ´Â ¿©·¯ °³ÀÇ SQL¸í·É¹®À» ÇÏ³ªÀÇ ³í¸®Àû ÀÛ¾÷ ´ÜÀ§·Î Ã³¸®ÇÏ´Â °³³ä
+-- COMMIT : Æ®·£Àè¼ÇÀÇ Á¤»óÀûÀÎ Á¾·á
+--               Æ®·£Àè¼Ç³»ÀÇ ¸ðµç SQL ¸í·É¹®¿¡ ÀÇÇØ º¯°æµÈ ÀÛ¾÷ ³»¿ëÀ» µð½ºÅ©¿¡ ¿µ±¸ÀûÀ¸·Î ÀúÀåÇÏ°í 
+--               Æ®·£Àè¼ÇÀ» Á¾·á
+--               ÇØ´ç Æ®·£Àè¼Ç¿¡ ÇÒ´çµÈ CPU, ¸Þ¸ð¸® °°Àº ÀÚ¿øÀÌ ÇØÁ¦
+--               ¼­·Î ´Ù¸¥ Æ®·£Àè¼ÇÀ» ±¸ºÐÇÏ´Â ±âÁØ
+--               COMMIT ¸í·É¹® ½ÇÇàÇÏ±â Àü¿¡ ÇÏ³ªÀÇ Æ®·£Àè¼Ç º¯°æÇÑ °á°ú¸¦
+--               ´Ù¸¥ Æ®·£Àè¼Ç¿¡¼­ Á¢±ÙÇÒ ¼ö ¾øµµ·Ï ¹æÁöÇÏ¿© ÀÏ°ü¼º À¯Áö
  
--- ROLLBACK : íŠ¸ëžœìž­ì…˜ì˜ ì „ì²´ ì·¨ì†Œ
---                   íŠ¸ëžœìž­ì…˜ë‚´ì˜ ëª¨ë“  SQL ëª…ë ¹ë¬¸ì— ì˜í•´ ë³€ê²½ëœ ìž‘ì—… ë‚´ìš©ì„ ì „ë¶€ ì·¨ì†Œí•˜ê³  íŠ¸ëžœìž­ì…˜ì„ ì¢…ë£Œ
---                   CPU,ë©”ëª¨ë¦¬ ê°™ì€ í•´ë‹¹ íŠ¸ëžœìž­ì…˜ì— í• ë‹¹ëœ ìžì›ì„ í•´ì œ, íŠ¸ëžœìž­ì…˜ì„ ê°•ì œ ì¢…ë£Œ
+-- ROLLBACK : Æ®·£Àè¼ÇÀÇ ÀüÃ¼ Ãë¼Ò
+--                   Æ®·£Àè¼Ç³»ÀÇ ¸ðµç SQL ¸í·É¹®¿¡ ÀÇÇØ º¯°æµÈ ÀÛ¾÷ ³»¿ëÀ» ÀüºÎ Ãë¼ÒÇÏ°í Æ®·£Àè¼ÇÀ» Á¾·á
+--                   CPU,¸Þ¸ð¸® °°Àº ÇØ´ç Æ®·£Àè¼Ç¿¡ ÇÒ´çµÈ ÀÚ¿øÀ» ÇØÁ¦, Æ®·£Àè¼ÇÀ» °­Á¦ Á¾·á
 ---------------------------------------------------------------------------------------
 
 
 ----------------------------------
 -- SEQUENCE ***
--- ìœ ì¼í•œ ì‹ë³„ìž
--- ê¸°ë³¸ í‚¤ ê°’ì„ ìžë™ìœ¼ë¡œ ìƒì„±í•˜ê¸° ìœ„í•˜ì—¬ ì¼ë ¨ë²ˆí˜¸ ìƒì„± ê°ì²´
--- ì˜ˆë¥¼ ë“¤ë©´, ì›¹ ê²Œì‹œíŒì—ì„œ ê¸€ì´ ë“±ë¡ë˜ëŠ” ìˆœì„œëŒ€ë¡œ ë²ˆí˜¸ë¥¼ í•˜ë‚˜ì”© í• ë‹¹í•˜ì—¬ ê¸°ë³¸í‚¤ë¡œ ì§€ì •í•˜ê³ ìž í• ë•Œ 
--- ì‹œí€€ìŠ¤ë¥¼ íŽ¸ë¦¬í•˜ê²Œ ì´ìš©
--- ì—¬ëŸ¬ í…Œì´ë¸”ì—ì„œ ê³µìœ  ê°€ëŠ¥  -- > ì¼ë°˜ì ìœ¼ë¡œëŠ” ê°œë³„ì  ì‚¬ìš© 
+-- À¯ÀÏÇÑ ½Äº°ÀÚ
+-- ±âº» Å° °ªÀ» ÀÚµ¿À¸·Î »ý¼ºÇÏ±â À§ÇÏ¿© ÀÏ·Ã¹øÈ£ »ý¼º °´Ã¼
+-- ¿¹¸¦ µé¸é, À¥ °Ô½ÃÆÇ¿¡¼­ ±ÛÀÌ µî·ÏµÇ´Â ¼ø¼­´ë·Î ¹øÈ£¸¦ ÇÏ³ª¾¿ ÇÒ´çÇÏ¿© ±âº»Å°·Î ÁöÁ¤ÇÏ°íÀÚ ÇÒ¶§ 
+-- ½ÃÄö½º¸¦ Æí¸®ÇÏ°Ô ÀÌ¿ë
+-- ¿©·¯ Å×ÀÌºí¿¡¼­ °øÀ¯ °¡´É  -- > ÀÏ¹ÝÀûÀ¸·Î´Â °³º°Àû »ç¿ë 
 ----------------------------------
--- 1) SEQUENCE í˜•ì‹
+-- 1) SEQUENCE Çü½Ä
 --CREATE SEQUENCE sequence
 --[INCREMENT BY n]
 --[START WITH n]
@@ -31,23 +31,26 @@
 --[MINVALUE n | NOMINVALUE]
 --[CYCLE | NOCYCLE]
 --[CACHE n | NOCACHE];
---INCREMENT BY n : ì‹œí€€ìŠ¤ ë²ˆí˜¸ì˜ ì¦ê°€ì¹˜ë¡œ ê¸°ë³¸ì€ 1,  ì¼ë°˜ì ìœ¼ë¡œ ?1 ì‚¬ìš©
---START WITH n : ì‹œí€€ìŠ¤ ì‹œìž‘ë²ˆí˜¸, ê¸°ë³¸ê°’ì€ 1
---MAXVALUE n : ìƒì„± ê°€ëŠ¥í•œ ì‹œí€€ìŠ¤ì˜ ìµœëŒ€ê°’
---MAXVALUE n : ì‹œí€€ìŠ¤ ë²ˆí˜¸ë¥¼ ìˆœí™˜ì ìœ¼ë¡œ ì‚¬ìš©í•˜ëŠ” cycleë¡œ ì§€ì •í•œ ê²½ìš°, MAXVALUEì— ë„ë‹¬í•œ í›„ ìƒˆë¡œ ì‹œìž‘í•˜ëŠ” ì‹œí€€ìŠ¤ê°’
---CYCLE | NOCYCLE : MAXVALUE ë˜ëŠ” MINVALUEì— ë„ë‹¬í•œ í›„ ì‹œí€€ìŠ¤ì˜ ìˆœí™˜ì ì¸ ì‹œí€€ìŠ¤ ë²ˆí˜¸ì˜ ìƒì„± ì—¬ë¶€ ì§€ì •
---CACHE n | NOCACHE : ì‹œí€€ìŠ¤ ìƒì„± ì†ë„ ê°œì„ ì„ ìœ„í•´ ë©”ëª¨ë¦¬ì— ìºì‰¬í•˜ëŠ” ì‹œí€€ìŠ¤ ê°œìˆ˜, ê¸°ë³¸ê°’ì€ 20
+--INCREMENT BY n : ½ÃÄö½º ¹øÈ£ÀÇ Áõ°¡Ä¡·Î ±âº»Àº 1,  ÀÏ¹ÝÀûÀ¸·Î ?1 »ç¿ë
+--START WITH n : ½ÃÄö½º ½ÃÀÛ¹øÈ£, ±âº»°ªÀº 1
+--MAXVALUE n : »ý¼º °¡´ÉÇÑ ½ÃÄö½ºÀÇ ÃÖ´ë°ª
+--MAXVALUE n : ½ÃÄö½º ¹øÈ£¸¦ ¼øÈ¯ÀûÀ¸·Î »ç¿ëÇÏ´Â cycle·Î ÁöÁ¤ÇÑ °æ¿ì, MAXVALUE¿¡ µµ´ÞÇÑ ÈÄ »õ·Î ½ÃÀÛÇÏ´Â ½ÃÄö½º°ª
+--CYCLE | NOCYCLE : MAXVALUE ¶Ç´Â MINVALUE¿¡ µµ´ÞÇÑ ÈÄ ½ÃÄö½ºÀÇ ¼øÈ¯ÀûÀÎ ½ÃÄö½º ¹øÈ£ÀÇ »ý¼º ¿©ºÎ ÁöÁ¤
+--CACHE n | NOCACHE : ½ÃÄö½º »ý¼º ¼Óµµ °³¼±À» À§ÇØ ¸Þ¸ð¸®¿¡ Ä³½¬ÇÏ´Â ½ÃÄö½º °³¼ö, ±âº»°ªÀº 20
 
--- 2) SEQUENCE sample ì˜ˆì‹œ1
+-- 2) SEQUENCE sample ¿¹½Ã1
 
 CREATE SEQUENCE sample_seq
 INCREMENT BY 1
 START with 10000;
 
--- 3) SEQUENCE sample ì˜ˆì‹œ2
-SELECT sample_seq.nextVal FROM dual; --LAST NUMBERë¶€í„° ì‹œìž‘
-SELECT sample_seq.CURRVAL FROM dual; --í˜„ìž¬ê°’ì„ ê°€ì ¸ì˜¨ë‹¤.
+-- 3) SEQUENCE sample ¿¹½Ã2
+SELECT sample_seq.nextVal FROM dual; --LAST NUMBERºÎÅÍ ½ÃÀÛ
+SELECT sample_seq.CURRVAL FROM dual; --ÇöÀç°ªÀ» °¡Á®¿Â´Ù.
 
+
+CREATE Table dept_second
+AS SELECT * FROM dept;
 
 
 CREATE SEQUENCE dept_dno_seq
@@ -55,78 +58,79 @@ INCREMENT BY 1
 START WITH 10;
 
 
--- 4) SEQUENCE dept_dno_seqë¥¼ ì´ìš© dept_second ìž…ë ¥ --> ì‹¤ ì‚¬ìš© ì˜ˆì‹œ
-INSERT INTO dept_second
-VALUES(dept_dno_seq.NEXTVAL,'Accouning','NEW WORK');
-
+-- 4) SEQUENCE dept_dno_seq¸¦ ÀÌ¿ë dept_second ÀÔ·Â --> ½Ç »ç¿ë ¿¹½Ã
+INSERT INTO dept_second VALUES(dept_dno_seq.NEXTVAL,'Accouning','NEW WORK');
 
 SELECT dept_dno_seq.CURRVAL FROM DUAL;
 
 
-INSERT INTO dept_second
-VALUES(dept_dno_seq.NEXTVAL,'íšŒê³„','ì´ëŒ€');
+INSERT INTO dept_second VALUES(dept_dno_seq.NEXTVAL,'zzzzzzz','aaaa');
 
 SELECT dept_dno_seq.CURRVAL FROM DUAL;
 
 
-INSERT INTO dept_second
-VALUES(dept_dno_seq.NEXTVAL,'ì¸ì‚¬íŒ€','ë‹¹ì‚°');
+INSERT INTO dept_second VALUES(dept_dno_seq.NEXTVAL,'È¸°è','ÀÌ´ë');
+SELECT dept_dno_seq.CURRVAL FROM DUAL;
 
 
---max ì „í™˜
+INSERT INTO dept_second VALUES(dept_dno_seq.NEXTVAL,'ÀÎ»çÆÀ','´ç»ê');
+
+
+--max ÀüÈ¯
 insert into dept_second values((select max(deptno)+1 from dept_second)
-    ,'ê²½ì˜íŒ€'
-    ,'ëŒ€ë¦¼'
+    ,'°æ¿µÆÀ'
+    ,'´ë¸²'
     );
---maxì™€ nextvalì˜ ì°¨ì´ì 
+--max¿Í nextvalÀÇ Â÷ÀÌÁ¡
 
 
 /*
             max                   seq
-ìˆ˜í–‰        sql           ê·¸ë£¹í•¨ìˆ˜ ê°ì²´
-ë¬¸ì œì      íŠ¸ëžœìž­ì…˜ ê·¹ížˆ     ê°’ì´ ìœ í•œ
-        ì ìœ¼ë‚˜ ì‹¤íŒ¨ê°€ëŠ¥ì„±     
-ê³µí†µì ì€   pkìž¡ì„ ëŒ€ ë§Žì´ ì‚¬ìš©
+¼öÇà        sql           ±×·ìÇÔ¼ö °´Ã¼
+¹®Á¦Á¡     Æ®·£Àè¼Ç ±ØÈ÷     °ªÀÌ À¯ÇÑ
+        ÀûÀ¸³ª ½ÇÆÐ°¡´É¼º     
+°øÅëÁ¡Àº   pkÀâÀ» ´ë ¸¹ÀÌ »ç¿ë
 
 */
 
---max ì „í™˜
+--max ÀüÈ¯
 INSERT INTO dept_second
-VALUES(dept_dno_seq.NEXTVAL,'ì¸ì‚¬3íŒ€','ë‹¹ì‚°3');
---ì˜¤ë¥˜  -> maxì™€ seq.nextvalì„ ì„žì–´ì“°ì§€ ë§ìž
+VALUES(dept_dno_seq.NEXTVAL,'ÀÎ»ç3ÆÀ','´ç»ê3');
+--¿À·ù  -> max¿Í seq.nextvalÀ» ¼¯¾î¾²Áö ¸»ÀÚ
 
 
 
---5)  Data ì‚¬ì „ì—ì„œ ì •ë³´ ì¡°íšŒ
+--5)  Data »çÀü¿¡¼­ Á¤º¸ Á¶È¸
 SELECT sequence_name,min_value,max_value,increment_by from user_sequences;
--- ì‹œí€€ìŠ¤ ì‚­ì œ
+
+-- ½ÃÄö½º »èÁ¦
 DROP SEQUENCE sample_SEQ;
 
 /*
 ------------------------------------------------------------------
-     ë°ì´í„° ì‚¬ì „
- 1. ì‚¬ìš©ìžì™€ ë°ì´í„°ë² ì´ìŠ¤ ìžì›ì„ íš¨ìœ¨ì ìœ¼ë¡œ ê´€ë¦¬í•˜ê¸° ìœ„í•œ ë‹¤ì–‘í•œ ì •ë³´ë¥¼ ì €ìž¥í•˜ëŠ” ì‹œìŠ¤í…œ í…Œì´ë¸”ì˜ ì§‘í•©
- 2. ì‚¬ì „ ë‚´ìš©ì˜ ìˆ˜ì •ì€ ì˜¤ë¼í´ ì„œë²„ë§Œ ê°€ëŠ¥
- 3. ì˜¤ë¼í´ ì„œë²„ëŠ” ë°ì´íƒ€ë² ì´ìŠ¤ì˜ êµ¬ì¡°, ê°ì‚¬, ì‚¬ìš©ìž ê¶Œí•œ, ë°ì´í„° ë“±ì˜ ë³€ê²½ ì‚¬í•­ì„ ë°˜ì˜í•˜ê¸° ìœ„í•´
-    ì§€ì†ì  ìˆ˜ì • ë° ê´€ë¦¬
- 4. ë°ì´íƒ€ë² ì´ìŠ¤ ê´€ë¦¬ìžë‚˜ ì¼ë°˜ ì‚¬ìš©ìžëŠ” ì½ê¸° ì „ìš© ë·°ì— ì˜í•´ ë°ì´í„° ì‚¬ì „ì˜ ë‚´ìš©ì„ ì¡°íšŒë§Œ ê°€ëŠ¥
- 5. ì‹¤ë¬´ì—ì„œëŠ” í…Œì´ë¸”, ì¹¼ëŸ¼, ë·° ë“±ê³¼ ê°™ì€ ì •ë³´ë¥¼ ì¡°íšŒí•˜ê¸° ìœ„í•´ ì‚¬ìš©
+     µ¥ÀÌÅÍ »çÀü
+ 1. »ç¿ëÀÚ¿Í µ¥ÀÌÅÍº£ÀÌ½º ÀÚ¿øÀ» È¿À²ÀûÀ¸·Î °ü¸®ÇÏ±â À§ÇÑ ´Ù¾çÇÑ Á¤º¸¸¦ ÀúÀåÇÏ´Â ½Ã½ºÅÛ Å×ÀÌºíÀÇ ÁýÇÕ
+ 2. »çÀü ³»¿ëÀÇ ¼öÁ¤Àº ¿À¶óÅ¬ ¼­¹ö¸¸ °¡´É
+ 3. ¿À¶óÅ¬ ¼­¹ö´Â µ¥ÀÌÅ¸º£ÀÌ½ºÀÇ ±¸Á¶, °¨»ç, »ç¿ëÀÚ ±ÇÇÑ, µ¥ÀÌÅÍ µîÀÇ º¯°æ »çÇ×À» ¹Ý¿µÇÏ±â À§ÇØ
+    Áö¼ÓÀû ¼öÁ¤ ¹× °ü¸®
+ 4. µ¥ÀÌÅ¸º£ÀÌ½º °ü¸®ÀÚ³ª ÀÏ¹Ý »ç¿ëÀÚ´Â ÀÐ±â Àü¿ë ºä¿¡ ÀÇÇØ µ¥ÀÌÅÍ »çÀüÀÇ ³»¿ëÀ» Á¶È¸¸¸ °¡´É
+ 5. ½Ç¹«¿¡¼­´Â Å×ÀÌºí, Ä®·³, ºä µî°ú °°Àº Á¤º¸¸¦ Á¶È¸ÇÏ±â À§ÇØ »ç¿ë
 
 ------------------------------------------------------------------
 ------------------------------------------------------------------
------     ë°ì´í„° ì‚¬ì „ ê´€ë¦¬ ì •ë³´
- 1.ë°ì´í„°ë² ì´ìŠ¤ì˜ ë¬¼ë¦¬ì  êµ¬ì¡°ì™€ ê°ì²´ì˜ ë…¼ë¦¬ì  êµ¬ì¡°
- 2. ì˜¤ë¼í´ ì‚¬ìš©ìž ì´ë¦„ê³¼ ìŠ¤í‚¤ë§ˆ ê°ì²´ ì´ë¦„
- 3. ì‚¬ìš©ìžì—ê²Œ ë¶€ì—¬ëœ ì ‘ê·¼ ê¶Œí•œê³¼ ë¡¤
- 4. ë¬´ê²°ì„± ì œì•½ì¡°ê±´ì— ëŒ€í•œ ì •ë³´
- 5. ì¹¼ëŸ¼ë³„ë¡œ ì§€ì •ëœ ê¸°ë³¸ê°’
- 6. ìŠ¤í‚¤ë§ˆ ê°ì²´ì— í• ë‹¹ëœ ê³µê°„ì˜ í¬ê¸°ì™€ ì‚¬ìš© ì¤‘ì¸ ê³µê°„ì˜ í¬ê¸° ì •ë³´
- 7. ê°ì²´ ì ‘ê·¼ ë° ê°±ì‹ ì— ëŒ€í•œ ê°ì‚¬ ì •ë³´
- 8.ë°ì´í„°ë² ì´ìŠ¤ ì´ë¦„, ë²„ì „, ìƒì„±ë‚ ì§œ, ì‹œìž‘ëª¨ë“œ, ì¸ìŠ¤í„´ìŠ¤ ì´ë¦„ ì •ë³´
+-----     µ¥ÀÌÅÍ »çÀü °ü¸® Á¤º¸
+ 1.µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ¹°¸®Àû ±¸Á¶¿Í °´Ã¼ÀÇ ³í¸®Àû ±¸Á¶
+ 2. ¿À¶óÅ¬ »ç¿ëÀÚ ÀÌ¸§°ú ½ºÅ°¸¶ °´Ã¼ ÀÌ¸§
+ 3. »ç¿ëÀÚ¿¡°Ô ºÎ¿©µÈ Á¢±Ù ±ÇÇÑ°ú ·Ñ
+ 4. ¹«°á¼º Á¦¾àÁ¶°Ç¿¡ ´ëÇÑ Á¤º¸
+ 5. Ä®·³º°·Î ÁöÁ¤µÈ ±âº»°ª
+ 6. ½ºÅ°¸¶ °´Ã¼¿¡ ÇÒ´çµÈ °ø°£ÀÇ Å©±â¿Í »ç¿ë ÁßÀÎ °ø°£ÀÇ Å©±â Á¤º¸
+ 7. °´Ã¼ Á¢±Ù ¹× °»½Å¿¡ ´ëÇÑ °¨»ç Á¤º¸
+ 8.µ¥ÀÌÅÍº£ÀÌ½º ÀÌ¸§, ¹öÀü, »ý¼º³¯Â¥, ½ÃÀÛ¸ðµå, ÀÎ½ºÅÏ½º ÀÌ¸§ Á¤º¸
 ------------------------------------------------------------------
--------     ë°ì´í„° ì‚¬ì „ ì¢…ë¥˜
- 1. USER_ : ê°ì²´ì˜ ì†Œìœ ìžë§Œ ì ‘ê·¼ ê°€ëŠ¥í•œ ë°ì´í„° ì‚¬ì „ ë·°
- user_tablesëŠ” ì‚¬ìš©ìžê°€ ì†Œìœ í•œ í…Œì´ë¸”ì— ëŒ€í•œ ì •ë³´ë¥¼ ì¡°íšŒí•  ìˆ˜ ìžˆëŠ” ë°ì´í„° ì‚¬ì „ ë·°.
+-------     µ¥ÀÌÅÍ »çÀü Á¾·ù
+ 1. USER_ : °´Ã¼ÀÇ ¼ÒÀ¯ÀÚ¸¸ Á¢±Ù °¡´ÉÇÑ µ¥ÀÌÅÍ »çÀü ºä
+ user_tables´Â »ç¿ëÀÚ°¡ ¼ÒÀ¯ÇÑ Å×ÀÌºí¿¡ ´ëÇÑ Á¤º¸¸¦ Á¶È¸ÇÒ ¼ö ÀÖ´Â µ¥ÀÌÅÍ »çÀü ºä.
 */
 
 
@@ -136,10 +140,9 @@ FROM user_tables;
 SELECT *
 FROM user_catalog;
 
--- 2. ALL_    : ìžê¸° ì†Œìœ  ë˜ëŠ” ê¶Œí•œì„ ë¶€ì—¬ ë°›ì€ ê°ì²´ë§Œ ì ‘ê·¼ ê°€ëŠ¥í•œ ë°ì´í„° ì‚¬ì „ ë·°
+-- 2. ALL_    : ÀÚ±â ¼ÒÀ¯ ¶Ç´Â ±ÇÇÑÀ» ºÎ¿© ¹ÞÀº °´Ã¼¸¸ Á¢±Ù °¡´ÉÇÑ µ¥ÀÌÅÍ »çÀü ºä
 SELECT owner , table_name
 FROM all_tables;
--- 3. DBA_   : ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ìžë§Œ ì ‘ê·¼ ê°€ëŠ¥í•œ ë°ì´í„° ì‚¬ì „ ë·°
+-- 3. DBA_   : µ¥ÀÌÅÍº£ÀÌ½º °ü¸®ÀÚ¸¸ Á¢±Ù °¡´ÉÇÑ µ¥ÀÌÅÍ »çÀü ºä
 SELECT owner, table_name
 FROM dba_tables;
-

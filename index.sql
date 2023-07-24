@@ -1,35 +1,26 @@
-/* INDEX ê´€ë¦¬ */
-
-
-/*  ì¸ë±ìŠ¤ëŠ” SQL ëª…ë ¹ë¬¸ì˜ ì²˜ë¦¬ ì†ë„ë¥¼ í–¥ìƒ(*) ì‹œí‚¤ê¸° ìœ„í•´ ì¹¼ëŸ¼ì— ëŒ€í•´ ìƒì„±í•˜ëŠ” ê°ì²´
---  ì¸ë±ìŠ¤ëŠ” í¬ì¸íŠ¸ë¥¼ ì´ìš©í•˜ì—¬ í…Œì´ë¸”ì— ì €ìž¥ëœ ë°ì´í„°ë¥¼ ëžœë¤ ì•¡ì„¸ìŠ¤í•˜ê¸° ìœ„í•œ ëª©ì ìœ¼ë¡œ ì‚¬ìš©
---  [1]ì¸ë±ìŠ¤ì˜ ì¢…ë¥˜
---   1)ê³ ìœ  ì¸ë±ìŠ¤ : ìœ ì¼í•œ ê°’ì„ ê°€ì§€ëŠ” ì¹¼ëŸ¼ì— ëŒ€í•´ ìƒì„±í•˜ëŠ” ì¸ë±ìŠ¤ë¡œ ëª¨ë“  ì¸ë±ìŠ¤ í‚¤ëŠ”
---    í…Œì´ë¸”ì˜ í•˜ë‚˜ì˜ í–‰ê³¼ ì—°ê²°
+/*  ÀÎµ¦½º´Â SQL ¸í·É¹®ÀÇ Ã³¸® ¼Óµµ¸¦ Çâ»ó(*) ½ÃÅ°±â À§ÇØ Ä®·³¿¡ ´ëÇØ »ý¼ºÇÏ´Â °´Ã¼
+--  ÀÎµ¦½º´Â Æ÷ÀÎÆ®¸¦ ÀÌ¿ëÇÏ¿© Å×ÀÌºí¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ¸¦ ·£´ý ¾×¼¼½ºÇÏ±â À§ÇÑ ¸ñÀûÀ¸·Î »ç¿ë
+--  [1]ÀÎµ¦½ºÀÇ Á¾·ù
+--   1)°íÀ¯ ÀÎµ¦½º : À¯ÀÏÇÑ °ªÀ» °¡Áö´Â Ä®·³¿¡ ´ëÇØ »ý¼ºÇÏ´Â ÀÎµ¦½º·Î ¸ðµç ÀÎµ¦½º Å°´Â
+--    Å×ÀÌºíÀÇ ÇÏ³ªÀÇ Çà°ú ¿¬°á
 */
-
 CREATE UNIQUE INDEX idx_dept_name
 ON      department(dname);
 
---   2)ë¹„ê³ ìœ  ì¸ë±ìŠ¤
--- ë¬¸) í•™ìƒ í…Œì´ë¸”ì˜ birthdate ì¹¼ëŸ¼ì„ ë¹„ê³ ìœ  ì¸ë±ìŠ¤ë¡œ ìƒì„±í•˜ì—¬ë¼
+--   2)ºñ°íÀ¯ ÀÎµ¦½º
+-- ¹®) ÇÐ»ý Å×ÀÌºíÀÇ birthdate Ä®·³À» ºñ°íÀ¯ ÀÎµ¦½º·Î »ý¼ºÇÏ¿©¶ó
 
 CREATE INDEX idx_stud_birthdate
 on student(birthdate);
---ì„±ëŠ¥ì—ë§Œ ì˜í–¥ì„ ë¯¸ì¹˜ê³  ì œì•½ì¡°ê±´ì—ëŠ” ì˜í–¥ì´ ì—†ë‹¤?
+--¼º´É¿¡¸¸ ¿µÇâÀ» ¹ÌÄ¡°í Á¦¾àÁ¶°Ç¿¡´Â ¿µÇâÀÌ ¾ø´Ù?
 
 insert into student(studno,name,idnum,birthdate)
-                VALUES(30102,'ê¹€ìœ ì‹ ','8012301036614','84/09/16');
+                VALUES(30102,'±èÀ¯½Å','8012301036614','84/09/16');
+--   3)´ÜÀÏ ÀÎµ¦½º
 
-
---   3)ë‹¨ì¼ ì¸ë±ìŠ¤
-
-
-
-
---   4)ê²°í•© ì¸ë±ìŠ¤ :  ë‘ ê°œ ì´ìƒì˜ ì¹¼ëŸ¼ì„ ê²°í•©í•˜ì—¬ ìƒì„±í•˜ëŠ” ì¸ë±ìŠ¤
---     ë¬¸) í•™ìƒ í…Œì´ë¸”ì˜ deptno, grade ì¹¼ëŸ¼ì„ ê²°í•© ì¸ë±ìŠ¤ë¡œ ìƒì„±
---          ê²°í•© ì¸ë±ìŠ¤ì˜ ì´ë¦„ì€ idx_stud_dno_grade ë¡œ ì •ì˜
+--   4)°áÇÕ ÀÎµ¦½º :  µÎ °³ ÀÌ»óÀÇ Ä®·³À» °áÇÕÇÏ¿© »ý¼ºÇÏ´Â ÀÎµ¦½º
+--     ¹®) ÇÐ»ý Å×ÀÌºíÀÇ deptno, grade Ä®·³À» °áÇÕ ÀÎµ¦½º·Î »ý¼º
+--          °áÇÕ ÀÎµ¦½ºÀÇ ÀÌ¸§Àº idx_stud_dno_grade ·Î Á¤ÀÇ
 
 CREATE INDEX idx_stud_dno_grade
     ON student(deptno,grade);
@@ -41,18 +32,18 @@ WHERE deptno = 101
 AND grade=2;
 
 --- Optimizer
---- 1) RBO (ê·œì¹™ëŒ€ë¡œ) 2) ìš”ì¦˜ì€ CBO
+--- 1) RBO (±ÔÄ¢´ë·Î) 2) ¿äÁòÀº CBO
 
---RBOë³€ê²½
+--RBOº¯°æ
 ALTER SESSION SET OPTIMIZER_MODE = RULE;
 
---SESSION ìƒì—ì…” ë³€ê²½ë ë•Œ
-ALTER SESSION SET OPTIMIZER_MODE = rule   --RBO ê·œì¹™ëŒ€ë¡œ 
-ALTER SESSION SET OPTIMIZER_MODE = CHOOSE  --RBOê±°ë‚˜ CBO 
+--SESSION »ó¿¡¼Å º¯°æµÉ¶§
+ALTER SESSION SET OPTIMIZER_MODE = rule   --RBO ±ÔÄ¢´ë·Î 
+ALTER SESSION SET OPTIMIZER_MODE = CHOOSE  --RBO°Å³ª CBO 
 
---CBO ë¹„ìš©ì— ë”°ë¼ 
-ALTER SESSION SET OPTIMIZER_MODE = first_rows  --ëª‡ê°œë§ˆ ã„´ë„ì°©
-ALTER SESSION SET OPTIMIZER_MODE = ALL_ROWS  -- ë‹¤ë„ì°©?
+--CBO ºñ¿ë¿¡ µû¶ó 
+ALTER SESSION SET OPTIMIZER_MODE = first_rows  --¸î°³¸¶ ¤¤µµÂø
+ALTER SESSION SET OPTIMIZER_MODE = ALL_ROWS  -- ´ÙµµÂø?
 
 SELECT *
 FROM student
@@ -60,51 +51,53 @@ WHERE deptno = 101
 AND grade=2;
 
 
---   5)í•¨ìˆ˜ ê¸°ë°˜ ì¸ë±ìŠ¤(FBI) function based index
---      ì˜¤ë¼í´ 8i ë²„ì „ë¶€í„° ì§€ì›í•˜ëŠ” ìƒˆë¡œìš´ í˜•íƒœì˜ ì¸ë±ìŠ¤ë¡œ ì¹¼ëŸ¼ì— ëŒ€í•œ ì—°ì‚°ì´ë‚˜ í•¨ìˆ˜ì˜ ê³„ì‚° ê²°ê³¼ë¥¼ 
---      ì¸ë±ìŠ¤ë¡œ ìƒì„± ê°€ëŠ¥
---      UPPER(column_name) ë˜ëŠ” LOWER(column_name) í‚¤ì›Œë“œë¡œ ì •ì˜ëœ
---      í•¨ìˆ˜ ê¸°ë°˜ ì¸ë±ìŠ¤ë¥¼ ì‚¬ìš©í•˜ë©´ ëŒ€ì†Œë¬¸ìž êµ¬ë¶„ ì—†ì´ ê²€ìƒ‰
+--   5)ÇÔ¼ö ±â¹Ý ÀÎµ¦½º(FBI) function based index
+--      ¿À¶óÅ¬ 8i ¹öÀüºÎÅÍ Áö¿øÇÏ´Â »õ·Î¿î ÇüÅÂÀÇ ÀÎµ¦½º·Î Ä®·³¿¡ ´ëÇÑ ¿¬»êÀÌ³ª ÇÔ¼öÀÇ °è»ê °á°ú¸¦ 
+--      ÀÎµ¦½º·Î »ý¼º °¡´É
+--      UPPER(column_name) ¶Ç´Â LOWER(column_name) Å°¿öµå·Î Á¤ÀÇµÈ
+--      ÇÔ¼ö ±â¹Ý ÀÎµ¦½º¸¦ »ç¿ëÇÏ¸é ´ë¼Ò¹®ÀÚ ±¸ºÐ ¾øÀÌ °Ë»ö
 CREATE INDEX uppercase_idx ON emp(UPPER(ename));
 
 
---ALTER SESSION SET OPTIMIZER_MODE = CHOOSE  --RBOê±°ë‚˜ CBO
+--ALTER SESSION SET OPTIMIZER_MODE = CHOOSE  --RBO°Å³ª CBO
 SELECT *
 FROM emp
 WHERE UPPER(ename) = 'KING';
 
--- í•™ìƒ í…Œì´ë¸”ì— ìƒì„±ëœ PK_STUDNOì¸ë±ìŠ¤ë¥¼ ìž¬êµ¬ì„±
+-- ÇÐ»ý Å×ÀÌºí¿¡ »ý¼ºµÈ PK_STUDNOÀÎµ¦½º¸¦ Àç±¸¼º
 ALTER INDEX PK_STUDNO REBUILD;  
 
--- 1. index ì¡°íšŒ
+-- 1. index Á¶È¸
 select index_name, table_name,column_name
 from user_ind_columns;
 
 
--- 2, index ìƒì„± emp(job)
+-- 2, index »ý¼º emp(job)
 CREATE INDEX idx_emp_job ON emp(job);
 
 
 ALTER SESSION SET OPTIMIZER_MODE = RULE;
---3.ì¡°íšŒ
+--3.Á¶È¸
 SELECT * FROM emp WHERE job='MANAGER';  --OK
 
-SELECT * FROM emp WHERE job <> 'MANAGER';  -- RBOì¼ë•Œ ë¶€ì •í˜•ì€ ì¸ë±ìŠ¤ë¥¼? íƒ€ì§€ ì•ŠëŠ”ë‹¤?
+SELECT * FROM emp WHERE job <> 'MANAGER';  -- RBOÀÏ¶§ ºÎÁ¤ÇüÀº ÀÎµ¦½º¸¦? Å¸Áö ¾Ê´Â´Ù?
  
-SELECT * FROM EMP WHERE job like 'MA%';  -- INDEX ê±¸ë ·ì„ì‹œ ,ì²˜ìŒë¶€í„° ê°’ì´ ì •í•´ì ¸ìž‡ë‹¤. LIKEëŠ” íƒ„ë‹¤?
+SELECT * FROM EMP WHERE job like 'MA%';  -- INDEX °É·ÇÀ»½Ã ,Ã³À½ºÎÅÍ °ªÀÌ Á¤ÇØÁ®ÀÕ´Ù. LIKE´Â Åº´Ù?
 
-SELECT * FROM EMP WHERE job like '%MA%';  --?? ì´ê±´ì•ˆíƒ„ë‹¤? 
+SELECT * FROM EMP WHERE job like '%MA%';  --?? ÀÌ°Ç¾ÈÅº´Ù? 
 
-SELECT * FROM emp WHERE UPPER(JOB)= 'MENAGER';  --ì•ˆëœë‹¤ ? ì• ë¥¼ íƒ€ê²Œ í•˜ë ¤ë©´ FBIë¥¼ í•˜ë©´ëœë‹¤? 
+SELECT * FROM emp WHERE UPPER(JOB)= 'MENAGER';  --¾ÈµÈ´Ù ? ¾Ö¸¦ Å¸°Ô ÇÏ·Á¸é FBI¸¦ ÇÏ¸éµÈ´Ù? 
 
---ížŒíŠ¸?
+--ÈùÆ®?
 SELECT /*+ first_rows*/ename FROM emp;
 SELECT /*+ rule */ename FROM emp;
 
 
-
-
---ì˜µí‹°ë§ˆì´ì € ëª¨ë“œ í™•ì¸
+--¿ÉÆ¼¸¶ÀÌÀú ¸ðµå È®ÀÎ
 SELECT NAME,VALUE,ISDEFAULT,ISMODIFIED, DESCRIPTION
 FROM V$SYSTEM_PARAMETER
 WHERE NAME LIKE '%optimizr_mode%'
+
+
+----------------------------------------------------------------------------------------
+

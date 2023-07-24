@@ -16,11 +16,23 @@ insert into address
 values(1,'HGDONG','SEOUL','123-4567','gbhong@naver.com')
 
 /*
-ë¬¸1) addressìŠ¤í‚¤ë§ˆ/Data ìœ ì§€í•˜ë©°     addr_second Table ìƒì„± 
-ë¬¸2) addressìŠ¤í‚¤ë§ˆ ìœ ì§€í•˜ë©°  Data ë³µì œ í•˜ì§€ ì•Šê³    addr_seven Table ìƒì„± 
-ë¬¸3) address(ì£¼ì†Œë¡) í…Œì´ë¸”ì—ì„œ id, name ì¹¼ëŸ¼ë§Œ ë³µì‚¬í•˜ì—¬ addr_third í…Œì´ë¸”ì„ ìƒì„±í•˜ì—¬ë¼         
-ë¬¸4) addr_second í…Œì´ë¸” ì„ addr_tmpë¡œ ì´ë¦„ì„ ë³€ê²½ í•˜ì‹œìš”
+¹®1) address½ºÅ°¸¶/Data À¯ÁöÇÏ¸ç     addr_second Table »ı¼º 
+¹®2) address½ºÅ°¸¶ À¯ÁöÇÏ¸ç  Data º¹Á¦ ÇÏÁö ¾Ê°í   addr_seven Table »ı¼º 
+¹®3) address(ÁÖ¼Ò·Ï) Å×ÀÌºí¿¡¼­ id, name Ä®·³¸¸ º¹»çÇÏ¿© addr_third Å×ÀÌºíÀ» »ı¼ºÇÏ¿©¶ó         
+¹®4) addr_second Å×ÀÌºí À» addr_tmp·Î ÀÌ¸§À» º¯°æ ÇÏ½Ã¿ä
+*/
+
+create Table  addr_second 
+AS select *from address;
 
 
+create Table  addr_seven 
+AS select * from address
+where 1=0;
 
+create table  addr_third
+as 
+    select id, name 
+    from address;
 
+ALTER TABLE addr_seven RENAME addr_seven_new;

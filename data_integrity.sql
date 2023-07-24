@@ -1,32 +1,32 @@
 /*
-ë¬´ê²°ì„± ì œì•½ ì¡°ê±´
+¹«°á¼º Á¦¾à Á¶°Ç
 
 NOT NULL
-ê³ ìœ í‚¤
-ê¸°ë³¸í‚¤  ìœ ì¼ì„± ,NOTNULL ,ìµœì†Œì„± -> 2ê°œë¡œ ë³µí•©í‚¤ ì§€ì •í• ìˆ˜ì‡ëŠë° í•˜ë‚˜ë¡œë§Œìœ¼ë¡œë„ ì„¤ëª…ê°€ëŠ¥í•œê±° 
-ì°¸ì¡°í‚¤
+°íÀ¯Å°
+±âº»Å°  À¯ÀÏ¼º ,NOTNULL ,ÃÖ¼Ò¼º -> 2°³·Î º¹ÇÕÅ° ÁöÁ¤ÇÒ¼öÀÕ´Àµ¥ ÇÏ³ª·Î¸¸À¸·Îµµ ¼³¸í°¡´ÉÇÑ°Å 
+ÂüÁ¶Å°
 CHECK
 
 
-------------            ì œì•½ì¡°ê±´(Constraint)        ***          ------------
-  ì •ì˜  : ë°ì´í„°ì˜ ì •í™•ì„±ê³¼ ì¼ê´€ì„±ì„ ë³´ì¥
- 1. í…Œì´ë¸” ìƒì„±ì‹œ ë¬´ê²°ì„± ì œì•½ì¡°ê±´ì„ ì •ì˜ ê°€ëŠ¥
- 2. í…Œì´ë¸”ì— ëŒ€í•´ ì •ì˜, ë°ì´í„° ë”•ì…”ë„ˆë¦¬ì— ì €ì¥ë˜ë¯€ë¡œ ì‘ìš© í”„ë¡œê·¸ë¨ì—ì„œ ì…ë ¥ëœ 
-     ëª¨ë“  ë°ì´í„°ì— ëŒ€í•´ ë™ì¼í•˜ê²Œ ì ìš©
- 3. ì œì•½ì¡°ê±´ì„ í™œì„±í™”, ë¹„í™œì„±í™” í•  ìˆ˜ ìˆëŠ” ìœµí†µì„±
+------------            Á¦¾àÁ¶°Ç(Constraint)        ***          ------------
+  Á¤ÀÇ  : µ¥ÀÌÅÍÀÇ Á¤È®¼º°ú ÀÏ°ü¼ºÀ» º¸Àå
+ 1. Å×ÀÌºí »ı¼º½Ã ¹«°á¼º Á¦¾àÁ¶°ÇÀ» Á¤ÀÇ °¡´É
+ 2. Å×ÀÌºí¿¡ ´ëÇØ Á¤ÀÇ, µ¥ÀÌÅÍ µñ¼Å³Ê¸®¿¡ ÀúÀåµÇ¹Ç·Î ÀÀ¿ë ÇÁ·Î±×·¥¿¡¼­ ÀÔ·ÂµÈ 
+     ¸ğµç µ¥ÀÌÅÍ¿¡ ´ëÇØ µ¿ÀÏÇÏ°Ô Àû¿ë
+ 3. Á¦¾àÁ¶°ÇÀ» È°¼ºÈ­, ºñÈ°¼ºÈ­ ÇÒ ¼ö ÀÖ´Â À¶Åë¼º
 
 
 
-------------            ì œì•½ì¡°ê±´(Constraint)   ì¢…ë¥˜      ***  ------------
-1 .NOT NULL  : ì—´ì´ NULLì„ í¬í•¨í•  ìˆ˜ ì—†ìŒ
-2. ê¸°ë³¸í‚¤(primary key) : UNIQUE +  NOT NULL + ìµœì†Œì„±  ì œì•½ì¡°ê±´ì„ ê²°í•©í•œ í˜•íƒœ
-3. ì°¸ì¡°í‚¤(foreign key) :  í…Œì´ë¸” ê°„ì— ì™¸ë˜ í‚¤ ê´€ê³„ë¥¼ ì„¤ì • ***
-4. CHECK : í•´ë‹¹ ì¹¼ëŸ¼ì— ì €ì¥ ê°€ëŠ¥í•œ ë°ì´í„° ê°’ì˜ ë²”ìœ„ë‚˜ ì¡°ê±´ ì§€ì •
+------------            Á¦¾àÁ¶°Ç(Constraint)   Á¾·ù      ***  ------------
+1 .NOT NULL  : ¿­ÀÌ NULLÀ» Æ÷ÇÔÇÒ ¼ö ¾øÀ½
+2. ±âº»Å°(primary key) : UNIQUE +  NOT NULL + ÃÖ¼Ò¼º  Á¦¾àÁ¶°ÇÀ» °áÇÕÇÑ ÇüÅÂ
+3. ÂüÁ¶Å°(foreign key) :  Å×ÀÌºí °£¿¡ ¿Ü·¡ Å° °ü°è¸¦ ¼³Á¤ ***
+4. CHECK : ÇØ´ç Ä®·³¿¡ ÀúÀå °¡´ÉÇÑ µ¥ÀÌÅÍ °ªÀÇ ¹üÀ§³ª Á¶°Ç ÁöÁ¤
 -------------------------------------------------------------
 
 
 
- 1.  ì œì•½ì¡°ê±´(Constraint) ì ìš© ìœ„í•œ ê°•ì¢Œ(subject) í…Œì´ë¸” ì¸ìŠ¤í„´ìŠ¤
+ 1.  Á¦¾àÁ¶°Ç(Constraint) Àû¿ë À§ÇÑ °­ÁÂ(subject) Å×ÀÌºí ÀÎ½ºÅÏ½º
 */
 
 CREATE TABLE subject
@@ -39,43 +39,41 @@ CREATE TABLE subject
 
 );
 
-COMMENT ON COLUMN subject.subno IS 'ìˆ˜ê°•ë²ˆí˜¸';
-COMMENT ON COLUMN subject.subname IS 'ìˆ˜ê°•ê³¼ëª©';
-COMMENT ON COLUMN subject.term IS 'í•™ê¸°';
+COMMENT ON COLUMN subject.subno IS '¼ö°­¹øÈ£';
+COMMENT ON COLUMN subject.subname IS '¼ö°­°ú¸ñ';
+COMMENT ON COLUMN subject.term IS 'ÇĞ±â';
 
 INSERT INTO subject(subno,subname,term,typeGubun)
-                                VALUES (10000,'ì»´í“¨í„°ê°œë¡ ','1','1');
+                                VALUES (10000,'ÄÄÇ»ÅÍ°³·Ğ','1','1');
 
 
 INSERT INTO subject(subno,subname,term,typegubun) 
-                                values (10001,'DBê°œë¡ ','2','1');
+                                values (10001,'DB°³·Ğ','2','1');
                                     
 INSERT INTO subject(subno,subname,term,typegubun) 
-                                 values (10002,'JSPê°œë¡ ','1','1');
+                                 values (10002,'JSP°³·Ğ','1','1');
 -- PK Constraint   --> Unique
 -- PK Constraint   --> NN
 -- subname NN
 -- Check  Constraint   --> term
 
 
--- Table ì„ ì–¸ì‹œ ëª»í•œê²ƒì„ ì¶”í›„ ì •ì˜ ê°€ëŠ¥
--- Student Table ì˜ idnumì„ uniqueë¡œ ì„ ì–¸
+-- Table ¼±¾ğ½Ã ¸øÇÑ°ÍÀ» ÃßÈÄ Á¤ÀÇ °¡´É
+-- Student Table ÀÇ idnumÀ» unique·Î ¼±¾ğ
 ALTER TABLE student
-ADD CONSTRAINT stud_idnum_uk UNIQUE(idnum); --KEYì¶”ê°€ì‹œ
+ADD CONSTRAINT stud_idnum_uk UNIQUE(idnum); --KEYÃß°¡½Ã
 
-INSERT INTO student(studno,name,idnum) values(30101,'ëŒ€ì¡°ì˜','8012301036613');
+INSERT INTO student(studno,name,idnum) values(30101,'´ëÁ¶¿µ','8012301036613');
 
-INSERT INTO student(studno,name,idnum) values(30102,'ê°•ê°ì°¬','8012301036613')
---ì˜¤ë¥˜
+INSERT INTO student(studno,name,idnum) values(30102,'°­°¨Âù','8012301036613')
+--¿À·ù
 
 ALTER TABLE student
 MODIFY (name CONSTRAINT stud_name_nn NOT NULL);
 
 
 
---CëŠ” NOT NULLì´ë‚˜ CHECK
+--C´Â NOT NULLÀÌ³ª CHECK
 SELECT *--CONSTRAINT_name , CONSTRAINT_TYPE
 FROM user_CONSTRAINTs
 WHERE table_name IN('SUBJECT','STUDENT');
-
-
