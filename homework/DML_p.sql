@@ -16,10 +16,10 @@ insert into address
 values(1,'HGDONG','SEOUL','123-4567','gbhong@naver.com')
 
 /*
-¹®1) address½ºÅ°¸¶/Data À¯ÁöÇÏ¸ç     addr_second Table »ý¼º 
-¹®2) address½ºÅ°¸¶ À¯ÁöÇÏ¸ç  Data º¹Á¦ ÇÏÁö ¾Ê°í   addr_seven Table »ý¼º 
-¹®3) address(ÁÖ¼Ò·Ï) Å×ÀÌºí¿¡¼­ id, name Ä®·³¸¸ º¹»çÇÏ¿© addr_third Å×ÀÌºíÀ» »ý¼ºÇÏ¿©¶ó         
-¹®4) addr_second Å×ÀÌºí À» addr_tmp·Î ÀÌ¸§À» º¯°æ ÇÏ½Ã¿ä
+ï¿½ï¿½1) addressï¿½ï¿½Å°ï¿½ï¿½/Data ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½     addr_second Table ï¿½ï¿½ï¿½ï¿½ 
+ï¿½ï¿½2) addressï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½  Data ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½   addr_seven Table ï¿½ï¿½ï¿½ï¿½ 
+ï¿½ï¿½3) address(ï¿½Ö¼Ò·ï¿½) ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ id, name Ä®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ addr_third ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½         
+ï¿½ï¿½4) addr_second ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ addr_tmpï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï½Ã¿ï¿½
 */
 
 create Table  addr_second 
@@ -35,4 +35,4 @@ as
     select id, name 
     from address;
 
-ALTER TABLE addr_seven RENAME addr_seven_new;
+RENAME addr_seven TO  addr_seven_new;
