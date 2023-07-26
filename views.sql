@@ -52,7 +52,8 @@ INSERT INTO v_emp_complex(empno, ename,deptno , dname,loc) --한꺼버넹
 -- 3개다 안넣어짐 복합뷰는 insert가 안된다.
 
 
-
+select view_name,text
+from user_vies;
 --- homework --
 ---문1)  학생 테이블에서 101번 학과 학생들의 학번, 이름, 학과 번호로 정의되는 단순 뷰를 생성
 ---뷰 명 :  v_stud_dept101
@@ -78,7 +79,7 @@ AS
             
 create or replace view v_prof_avg_sal 
 as
-    select avg(sal)  avg_sal  , sum(sal) sum_sal
+    select deptno,avg(sal)  avg_sal  , sum(sal) sum_sal
     from professor
-    group by sal;
+    group by deptno;
             
