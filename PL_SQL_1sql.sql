@@ -12,10 +12,7 @@
 --  3. 사번 해당하는 데이터 삭제 
 ----------------------------------------------------------
 CREATE OR REPLACE Procedure  Delte_emp
-    (
-        p_empno  in emp.empno%type
-        
-    )
+    (p_empno  in emp.empno%type)
     IS
         v_empno emp.empno%type;
         v_name emp.ename%type;
@@ -24,12 +21,12 @@ CREATE OR REPLACE Procedure  Delte_emp
         SELECT empno,ename,hiredate
         INTO v_empno,v_name,V_DATE
         FROM EMP
-        where p_empno = empno;
+        where empno = p_empno ;
         
         DBMS_OUTPUT.PUT_LINE('사번'|| v_empno);
         DBMS_OUTPUT.PUT_LINE('이름'|| v_name);
         
-        delete  from emp where empno = v_empno;
+        delete  from emp where empno = p_empno;
         
     END Delte_emp;
 ------------------------------------------------------------------------

@@ -328,3 +328,22 @@ END;
 -- 4. Insert -> emp 
 -- 5. 입사일은 현재일자
 --------------------------------------------------------------
+create or replace procedure inert_emp
+(
+    p_empno IN EMP.empno%TYPE,
+    p_ename IN EMP.ename%TYPE,
+    p_job  IN EMP.job %TYPE,
+    p_MGR  IN EMP.MGR%TYPE,
+    p_sal  IN EMP.sal%TYPE,
+    p_DEPTNO  IN EMP.DEPTNO%TYPE
+)
+IS 
+    v_comm EMP.COMM%TYPE;
+BEGIN
+    IF p_job = 'MANAGER' THEN
+        v_comm :=1000;
+    ELSE
+        v_comm := 150;
+    END IF;
+    INSERT INTO emp(empno,ename,job,MGR,hirddate,sal,comm,deptno)VALUES(p_empno,p_ename,p_job,p_MGR,SYSDATE.p_sal,p_DEPTNO);
+END;
