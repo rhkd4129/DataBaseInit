@@ -259,35 +259,6 @@ BEGIN
 END;
 
 
-CREATE OR REPLACE PROCEDURE in_emp
- (
-    p_name in emp.ename%type,
-    p_sal in emp.sal%type,
-    p_job in emp.job%type
- )
-
-IS
-    v_empno  emp.empno %TYPE;
-    --개발자 defind error
-    lowsal_err EXCEPTION;
-BEGIN
-    SELECT MAX(empno)+1
-    INTO v_empno
-    FROM emp;
-    
-    IF p_sal >= 1500  then
-        INSERT INTO emp(empno,ename,sal,job,deptno,hiredate)
-        VALUES(v_empno,p_name,p_sal,p_job,10,SYSDATE);
-    ELSE
-        RAISE lowsal_err;
-    END IF;
-    
-    EXCEPTION
-        WHEN DUP_VAL_ON_INDEX THEN
-                DBMS_OUTPUT.PUT_LINE('중복데이터가 존재 ');
-        WHEN lowsal_err THEN
-                DBMS_OUTPUT.PUT_LINE('지정한 글자가 너무많아 ');
-END;
 
 CREATE OR REPLACE PROCEDURE in_emp
  (
