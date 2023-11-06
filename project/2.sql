@@ -14,4 +14,7 @@ GROUP BY u.user_name, t.task_status;
     
 
 
-
+--proejct
+select project_startdate,project_enddate  
+from  prj_info
+where project_id = 1;

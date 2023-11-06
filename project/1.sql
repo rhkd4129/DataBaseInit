@@ -27,10 +27,12 @@ FROM (SELECT rownum rn, a.*
     FROM task t
         INNER JOIN prj_step p ON t.project_id = p.project_id AND t.project_step_seq = p.project_step_seq
         INNER JOIN user_info u ON t.user_id = u.user_id
-    WHERE t.project_id = 1 AND t.garbage = 0) a
+    WHERE t.project_id = 1 AND t.garbage = 0 
+    ORDER BY t.task_end_itme desc) a
     )
-    where rn between 1 and 5;
- 
+    where rn between 1 and 5
+   
+    
     
 
 
@@ -60,6 +62,6 @@ where t.user_id = u.user_id
                           WHERE t.garbage = 1 AND t.project_id = 1
                       ) a
              ) WHERE rn BETWEEN 1 AND 5 
---Fom µ¥ÀÌÅÍ¸¦ °®Á®¿Ã Å×ÀÌºí ¶Ç´Â ºä¸¦ ÁöÁ¤ÇÏ°í
---where¿¡ ¸Â´Â Á¶°ÇÀ» ÇÊÅÍ¸µÇØ¼­ °¡Á®¿À°í  ±×´ÙÀ½ Á¶ÀÎÀ»ÇÏ°í ±×´ÙÀ½ ±×·ìÀÏÁöÁ¤ÇÑ´Ù.
+--Fom ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ç´ï¿½ ï¿½ä¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½
+--whereï¿½ï¿½ ï¿½Â´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½×´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½×´ï¿½ï¿½ï¿½ ï¿½×·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 
