@@ -5,8 +5,8 @@ group by task_status
 order by TASK_STATUS;
 
 
-  Workload_chart
---SELECT u.user_name,
+  --Workload_chart
+SELECT u.user_name,
     SUM(CASE WHEN t.task_status = 0 THEN 1 ELSE 0 END) AS status_0_count,
     SUM(CASE WHEN t.task_status = 1 THEN 1 ELSE 0 END) AS status_1_count,
     SUM(CASE WHEN t.task_status = 2 THEN 1 ELSE 0 END) AS status_2_count
@@ -30,10 +30,10 @@ FROM (SELECT rownum rn, a.*
     WHERE t.project_id = 1 AND t.garbage = 0 
     ORDER BY t.task_end_itme desc) a
     )
-    where rn between 1 and 5
+    where rn between 1 and 100
    
     
-    
+
 
 
 --task Detail 
