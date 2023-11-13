@@ -15,6 +15,40 @@ WHERE t.project_id = 1 and t.user_id = u.user_id
 GROUP BY u.user_name; 
 
 
+-- PROJECT_STEP_CHART
+select *
+from prj_step
+where project_id = 1
+
+select
+    p.project_s_anme
+from
+    task t, prj_step p
+where 
+    t.proejct_id = 1 and
+    p.project_step_seq = t.proejct_step_seq
+
+select 
+   p.project_s_name,  t.task_subject
+from 
+    task t,  prj_step p 
+where
+    t.project_id  = p.project_id and
+    t.project_step_seq  = p.project_step_seq and
+    t.project_id =1 and t.project_step_seq=1
+union
+select 
+   p.project_s_name,  t.task_subject
+from 
+    task t,  prj_step p 
+where
+    t.project_id  = p.project_id and
+    t.project_step_seq  = p.project_step_seq and
+    t.project_id =1 and t.project_step_seq=2
+
+
+
+
 --task all count
 select count(task_id)  from task 
 where project_id = 1;
