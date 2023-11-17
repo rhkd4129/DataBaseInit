@@ -15,40 +15,6 @@ WHERE t.project_id = 1 and t.user_id = u.user_id
 GROUP BY u.user_name; 
 
 
--- PROJECT_STEP_CHART
-select *
-from prj_step
-where project_id = 1
-
-select
-    p.project_s_anme
-from
-    task t, prj_step p
-where 
-    t.proejct_id = 1 and
-    p.project_step_seq = t.proejct_step_seq
-
-select 
-   p.project_s_name,  t.task_subject
-from 
-    task t,  prj_step p 
-where
-    t.project_id  = p.project_id and
-    t.project_step_seq  = p.project_step_seq and
-    t.project_id =1 and t.project_step_seq=1
-union
-select 
-   p.project_s_name,  t.task_subject
-from 
-    task t,  prj_step p 
-where
-    t.project_id  = p.project_id and
-    t.project_step_seq  = p.project_step_seq and
-    t.project_id =1 and t.project_step_seq=2
-
-
-
-
 --task all count
 select count(task_id)  from task 
 where project_id = 1;
@@ -67,6 +33,23 @@ FROM (SELECT rownum rn, a.*
     where rn between 1 and 100
    
     
+
+--task search
+SELECT * 
+FROM (SELECT rownum rn, a.*  
+    From (SELECT t.*, p.project_s_name, u.user_name
+    FROM task t
+        INNER JOIN prj_step p ON t.project_id = p.project_id AND t.project_step_seq = p.project_step_seq
+        INNER JOIN user_info u ON t.user_id = u.user_id
+    WHERE t.project_id = 1 AND t.garbage = 0 
+    and t.task_subject like '%제%'
+    ORDER BY t.task_end_itme desc) a
+    )
+    where rn between 1 and 100
+
+select count(*)
+from task
+where project_id = 1 and task_subject like '%제%'
 
 
 
@@ -98,4 +81,17 @@ where t.user_id = u.user_id
              ) WHERE rn BETWEEN 1 AND 5 
 --Fom �����͸� ������ ���̺� �Ǵ� �並 �����ϰ�
 --where�� �´� ������ ���͸��ؼ� ��������  �״��� �������ϰ� �״��� �׷��������Ѵ�.
+        SELECT *
+            FROM (
+                SELECT rownum rn, a.*
+                    FROM (
+                        SELECT t.*, p.project_s_name, u.user_name
+                            FROM task t
+                                INNER JOIN prj_step p ON t.project_id = p.project_id AND t.project_step_seq = p.project_step_seq
+                                INNER JOIN user_info u ON t.user_id = u.user_id
+                                WHERE t.project_id = 1 AND t.garbage = 0
+                                ) a
+                            
+        )
+        WHERE rn BETWEEN 0AND 10
 
